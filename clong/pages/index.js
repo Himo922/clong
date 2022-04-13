@@ -1,40 +1,20 @@
 import styles from "../styles/Home.module.css";
-import { Hero, Contact } from "../components";
+import { Hero, About, Project, Experience, Contact } from "../components";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { Skills } from "../components/Skills/Skills";
+
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col flex-1 justify-start item-start">
-      {/* <div className="mx-2">
-        <h1 className="text-6xl font-bold">Hi, I am C Long</h1>
-        <p className="text-3xl">Full-stack Developer | Media Designer</p>
-      </div> */}
-      <Hero />
-      <div className={styles.grid}>
-        <a href="https://nextjs.org/docs" className={styles.card}>
-          <h2>Documentation &rarr;</h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a href="https://nextjs.org/learn" className={styles.card}>
-          <h2>Learn &rarr;</h2>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
-
-        <a
-          href="https://github.com/vercel/next.js/tree/canary/examples"
-          className={styles.card}
-        >
-          <h2>Examples &rarr;</h2>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className={styles.card}
-        >
-          <h2>Deploy &rarr;</h2>
-          <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-        </a>
-      </div>
+    <div
+      className="min-h-screen w-full flex flex-col flex-1 justify-center 
+      justify-items-stretch px-10 md:mx-[5%]"
+    >
+      <Hero className=" my-8 p-2" />
+      <About className=" mx-8 p-2" />
+      <Project className="mx-4 my-8 p-2" />
+      <Skills className="mx-4 my-8 p-2" />
+      <Contact className="mx-4 my-8 p-2 justify-self-start" />
     </div>
   );
 }

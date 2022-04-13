@@ -4,30 +4,37 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
-    colors: {
-      darkTheme: "#171a23",
-      white: {
-        900: "#ffffff",
-        700: "#C9C9CB",
-        500: "#A5A6A9",
-        300: "#363B49",
-      },
-      gray: {
-        700: "#8E8E8E",
-        900: "#363B49",
-      },
-      lightTheme: "#ffffff",
-      blue: {
-        700: "#7899FB",
-        900: "#3C6CFF",
-      },
-      black: {
-        900: "#000000",
-        700: "#404040",
-      },
-      pink: "#EEE8F6",
-    },
     extend: {
+      colors: {
+        darkTheme: "#112135",
+        white: {
+          900: "#ffffff",
+          700: "#C9C9CB",
+          500: "#A5A6A9",
+          300: "#363B49",
+        },
+        gray: {
+          700: "#8E8E8E",
+          900: "#363B49",
+        },
+        lightTheme: "#549FFC ",
+        blue: {
+          500: "#549FFC",
+          700: "#3C74FE",
+          900: "#112135",
+        },
+        black: {
+          900: "#000000",
+          800: "#0D1329",
+          700: "#32393C",
+        },
+        orange: {
+          900: "#EB9C26",
+          700: "#F0B435",
+          500: "#F5CC44",
+        },
+      },
+
       keyframes: {
         fadeIn: {
           "0%": {
@@ -47,7 +54,7 @@ module.exports = {
         top: "top",
       },
       fontFamily: {
-        sans: ["Rubik", ...defaultTheme.fontFamily.sans],
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         "5xl": "2.8125rem",
@@ -60,5 +67,5 @@ module.exports = {
       opacity: ["dark"],
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };

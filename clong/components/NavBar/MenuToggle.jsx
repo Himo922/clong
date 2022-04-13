@@ -1,6 +1,5 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { blue } from "tailwindcss/colors";
 
 const Path = (props) => (
   <motion.path
@@ -12,27 +11,13 @@ const Path = (props) => (
   />
 );
 
-export const MenuToggle = ({ toggle }) => (
-  <button
-    data-collapse-toggle="mobile-menu"
-    type="button"
-    aria-controls="mobile-menu"
-    aria-expanded="false"
-    onClick={toggle}
-    className="     
-    hover:bg-gray-100 
-    focus:outline-none focus:ring-2 
-    focus:ring-gray-200 
-    dark:text-gray-400 
-    dark:hover:bg-gray-700 
-    dark:focus:ring-gray-600"
-  >
-    <svg width="30" height="30" viewBox="0 0 30 30" className=" w-30 h-30">
+export const MenuToggle = ({ toggle, className }) => (
+  <button onClick={toggle} className={className}>
+    <svg viewBox="0 0 20 20" className="w-6 h-6">
       <Path
         variants={{
           closed: { d: "M 2 2.5 L 20 2.5" },
           open: { d: "M 3 16.5 L 17 2.5" },
-          focus: { fill: blue },
         }}
       />
       <Path

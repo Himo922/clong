@@ -11,11 +11,11 @@ const variants = {
   },
 };
 
-export const Navigation = () => (
-  <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
+export const Navigation = ({ className, id }) => (
+  <div className={className} id={id}>
     <motion.ul
       variants={variants}
-      className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
+      className=" absolute w-1/4 flex flex-col justify-end mt-[80%] md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:items-center  "
     >
       {navLists.map((item) => (
         <MenuItem item={item} key={item} />
@@ -24,4 +24,4 @@ export const Navigation = () => (
   </div>
 );
 
-const navLists = ["home", "about", "work", "journey", "contact"];
+const navLists = ["about", "work", "journey", "contact"];
