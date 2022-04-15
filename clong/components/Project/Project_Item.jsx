@@ -61,7 +61,7 @@ export const Project_Item = ({ className, odd }) => {
           <h4> {technologies}</h4>
         </div>
 
-        <div classname="">
+        <div className="">
           <motion.img
             className="object-fill h-[400px] rounded-lg brightness-50
           md:h-auto hover:brightness-100

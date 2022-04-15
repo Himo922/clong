@@ -43,6 +43,7 @@ export const Experience = ({ className }) => {
   ]);
   return (
     <Section
+      id="#Experience"
       className="mt-20 mb-16 md:mt-28"
       title={"experience.title"}
       description={"experience.description"}

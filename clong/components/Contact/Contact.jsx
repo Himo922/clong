@@ -36,6 +36,7 @@ export const Contact = ({ className }) => {
 
   return (
     <Section
+      id="#Contact"
       className={clsx("mt-20 mb-80 md:mt-28 max-w-screen-[40%] ", className)}
       title="Contact"
       description={"Just Contact me and REach me "}
