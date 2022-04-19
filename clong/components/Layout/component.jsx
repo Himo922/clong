@@ -13,7 +13,7 @@ export const Layout = ({ children }) => {
       </Head>
 
       <NavBar />
-      <main className="min-h-screen font-sans bg-lightTheme dark:bg-darkTheme transition-colors">
+      <main className="min-h-screen font-sans bg-lightTheme dark:bg-darkTheme transition-colors -z-10 m-0">
         {children}
       </main>
       <Footer />

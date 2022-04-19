@@ -35,7 +35,7 @@ export const Skills = () => {
           {skills.map((skill, index) => (
             <SkillsItems
               {...skill}
-              key={skill}
+              key={skill.name}
               custom={index}
               controls={controls}
             />

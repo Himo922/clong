@@ -1,6 +1,8 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
+import { ThemeTogger } from "./ThemeTogger";
+
 import clsx from "clsx";
 
 const variants = {
@@ -12,7 +14,7 @@ const variants = {
   },
 };
 
-export const Navigation = ({ className, id }) => (
+export const Navigation = ({ className, id, isMobile }) => (
   <motion.ul
     variants={variants}
     id={id}
@@ -24,6 +26,7 @@ export const Navigation = ({ className, id }) => (
     {navLists.map((item, index) => (
       <MenuItem item={item} key={item} links={navLinks[index]} />
     ))}
+    {!isMobile && <ThemeTogger className="ml-20 text-orange-700 uppercase" />}
   </motion.ul>
 );
 

@@ -26,11 +26,10 @@ export const MenuItem = ({ item }) => {
   return (
     <motion.li
       className="ml-12 flex z-10 items-center mb-20 py-2 pr-4 pl-3 text-orange-500 border-b 
-      md:items-center md:py-0 md:my-0 border-orange-500 overflow-auto text-xs
-     md:hover:bg-transparent md:hover:text-blue-700 
-      md:border-0 md:p-0 
-      dark:text-orange-700
-     dark:hover:text-white dark:border-gray-700
+      md:items-center border-orange-500 overflow-auto text-lg
+      md:hover:bg-transparent md:hover:text-blue-700 
+      md:border-0 md:p-0 md:py-0 md:my-0 md:text-sm
+      dark:hover:text-white dark:border-gray-700 dark:text-orange-700
       md:dark:hover:bg-transparent md:dark:hover:text-white "
       variants={variants}
       whileHover={{ scale: 1.1 }}
