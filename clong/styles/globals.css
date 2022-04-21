@@ -9,6 +9,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -20,5 +21,36 @@ a {
   box-sizing: border-box;
 }
 ::-webkit-scrollbar {
+  width: 0px;
   display: none;
+}
+
+.snap-parent-y-mandatory {
+  scroll-snap-type: y mandatory;
+  overflow: scroll;
+  height: 100vh;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.snap-parent-y-proximity {
+  scroll-snap-type: y proximity;
+  overflow: scroll;
+  height: 100vh;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.snap-child-start {
+  opacity: 0.5;
+  z-index: 10;
+  scroll-snap-align: start;
+  flex: none;
+}
+
+.snap-child-center {
+  opacity: 0.5;
+  z-index: 10;
+  scroll-snap-align: center;
+  flex: none;
 }

@@ -5,7 +5,7 @@ import { Container } from "../Container";
 
 export const About = ({ className }) => {
   return (
-    <Container>
+    <Container full>
       <div id="#About" className={clsx("flex flex-row mx-10", className)}>
         <div className="w-[200px] h-[500px] bg-orange-700"></div>
 

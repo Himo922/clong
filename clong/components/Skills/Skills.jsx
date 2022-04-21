@@ -4,7 +4,7 @@ import { Container } from "../Container";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-import { FaRaspberryPi, FaReact, FaPython } from "react-icons/fa";
+import { FaRaspberryPi, FaReact, FaPython, FaNodeJs } from "react-icons/fa";
 import { SiDjango, SiMongodb, SiArduino } from "react-icons/si";
 
 import { SkillsItems } from "./SkillsItems";
@@ -21,6 +21,7 @@ export const Skills = () => {
       }));
     }
   }, [controls, inView]);
+
   return (
     <Section
       className="mt-20 mb-16 md:mt-28"
@@ -53,9 +54,9 @@ const skills = [
     icon: <FaReact />,
   },
   {
-    name: "Python",
+    name: "Node",
     href: "Python.com",
-    icon: <FaPython />,
+    icon: <FaNodeJs />,
   },
   {
     name: "Django",

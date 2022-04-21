@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { SvgLogos } from "./SvgLogos";
+import { Icons } from "./Icons";
 import { Section } from "../Section";
 import { Container } from "../Container";
 import Image from "next/image";
@@ -25,28 +25,28 @@ const item = {
 
 export const Hero = ({ className }) => {
   return (
-    <div className="">
+    <div className=" bg-gradient-to-br from-blue-700 to-blue-500 drop-shadow-lg">
       <div
         className={clsx(
-          "container flex flex-wrap justify-center md:justify-between items-center mx-auto md:flex-row flex-col-reverse z-10",
+          "container flex flex-wrap justify-center md:justify-between items-center mx-auto md:flex-row flex-col-reverse z-10 ",
           className
         )}
       >
         <div className="mt-20 mb-16 md:mt-28 flex-1 z-10">
-          <p className="mb-4 text-md md:text-lg lg:text-xl dark:text-orange-500 text-black-700">
+          <p className="mb-4 text-md md:text-lg lg:text-xl dark:text-black-700  text-black-700">
             Hi, I am
           </p>
-          <h2 className="mb-7 text-4xl md:text-5xl lg:text-8xl font-bold dark:text-white-900 text-orange-700">
+          <h2 className="mb-7 text-4xl md:text-5xl lg:text-8xl font-bold dark:text-orange-700 text-orange-700">
             CLong Lam
           </h2>
-          <h3 className="mb-4 text-xl md:text-2xl lg:text-5xl font-bold dark:text-white-900 text-black-900">
+          <h3 className="mb-4 text-xl md:text-2xl lg:text-5xl font-bold dark:text-black-900 text-black-900">
             Developer &#38; Designer
           </h3>
 
           <p
             className="text-base max-w-[80%] mt-8 
         text-sm md:text-sm 
-        dark:text-orange-500 text-black-700 italic"
+        dark:text-black-700 text-black-700 italic"
           >
             “World grow &#38; evolve every day, learn never stop.”
           </p>
@@ -59,7 +59,7 @@ export const Hero = ({ className }) => {
                 variants={container}
                 className=""
               ></motion.div>
-              <SvgLogos className="max-w-full p-2 mt-10" />
+              <Icons className="max-w-full p-2 mt-10 dark:text-black-700 text-black-700" />
               {/* <p>First honor graduate from Media Arts degree.</p>
             <p>4-Year Work Experience from front-end to full-stack. </p>
             <p>Currently bassed in Vancourver</p> */}
@@ -67,13 +67,12 @@ export const Hero = ({ className }) => {
           </Container>
         </div>
 
-        <div className="container mx-auto grow flex-1 md:w-[40px] mt-20 py-2 items-center justify-center z-10">
+        <div className="container mx-auto flex-1 mt-20 text-lg py-2 items-center justify-center z-10 text-center">
           <Hero_image
-            className="block m-auto "
+            className="text-center text-2xl"
             alt="Picture of the author"
-            width="50vw"
-            height="50vw"
-            layout="intrinsic"
+            width="100%"
+            height="100%"
           />
         </div>
       </div>

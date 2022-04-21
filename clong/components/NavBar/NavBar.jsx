@@ -1,16 +1,17 @@
 import React, { useRef, useCallback, useState, useEffect } from "react";
 import { Logo } from "../Logo";
-import { motion, useCycle } from "framer-motion";
+import { motion, useCycle, useViewportScroll } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 import { useDimensions } from "./use_dimensions";
 import Link from "next/link";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { ThemeTogger } from "./ThemeTogger";
+import clsx from "clsx";
 
 const sidebar = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2.5 + 200}px at 90% 40px )`,
+    clipPath: `circle(${height * 2.5 + 200}px at 50% -40px )`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -18,7 +19,7 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(30px at 90% 40px)",
+    clipPath: "circle(15px at 50% -40px )",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -28,13 +29,17 @@ const sidebar = {
   },
 };
 
-export const NavBar = () => {
+export const NavBar = ({ className }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
+  const [showNav, setShowNav] = useState(true);
 
-  const [mounted, setMounted] = useState(false);
   const { height } = useDimensions(containerRef);
   const size = useWindowSize();
+
+  const { scrollY } = useViewportScroll();
+  /** this hook manages state **/
+  const [hidden, setHidden] = React.useState(false);
 
   const sizeWidth = () => {
     const isMobile = useWindowSize().width > 765 ? true : false;
@@ -42,8 +47,34 @@ export const NavBar = () => {
     return isMobile;
   };
 
+  function navUpdate() {
+    if (scrollY?.current < scrollY?.prev) {
+      setHidden(false);
+    } else if (scrollY?.current > 100 && scrollY?.current > scrollY?.prev) {
+      setHidden(true);
+    }
+  }
+
+  React.useEffect(() => {
+    return scrollY.onChange(() => navUpdate());
+  });
+
+  const navbarScrollVariants = {
+    visible: { opacity: 1, y: 0 },
+
+    hidden: { opacity: 0, y: -25 },
+  };
+
   return (
-    <motion.nav className=" fixed top-0 z-20 px-2 sm:px-4 py-2.5 rounded w-screen opacity-90 bg-transparent transition-top duration-300 top-0 m-0">
+    <motion.nav
+      variants={navbarScrollVariants}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
+      className={clsx(
+        "fixed top-0 z-20 px-2 sm:px-4 py-2.5 rounded w-full opacity-90 bg-transparent transition-top duration-300 top-0 m-0",
+        className
+      )}
+    >
       <div className="container flex flex-wrap justify-between items-center mx-auto dark:text-white-700">
         <Link href="/">
           <a className="flex items-center">

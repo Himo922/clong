@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { Section } from "../Section";
 import { Container } from "../Container";
 import { Project_Item } from "./Project_Item";
+
 const underline = {
   transition: {
     delay: 0.5,
@@ -35,17 +36,19 @@ export const Project = ({ className }) => {
   }, [animation, inView]);
 
   return (
-    <Section
-      className="mt-20 mb-16 md:mt-28 max-w-screen-[40%]"
-      title="Project"
-      description={`
+    <Container full>
+      <Section
+        className="mt-20 mb-16 md:mt-28 max-w-screen-[40%] sticky top-0"
+        title="Project"
+        description={`
     I have selected some of the favourite Projects or works that I made. If
     you feel interest feel free to check it on ${(<a> Github</a>)} and
     ${(<a> learn Togethers </a>)}`}
-    >
-      <Project_Item className="mt-5" />
-      <Project_Item className="mt-5" odd="True" />
-      <Project_Item className="mt-5" />
-    </Section>
+      >
+        <Project_Item className="mt-5" />
+        <Project_Item className="mt-5" odd="True" />
+        <Project_Item className="mt-5" />
+      </Section>
+    </Container>
   );
 };
