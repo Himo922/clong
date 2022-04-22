@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 import { SectionHeader } from "./SectionHeader";
 
-export const Section = ({ title, description, className, children }) => {
+export const Section = ({ title, description, className, children, color }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
@@ -16,7 +16,6 @@ export const Section = ({ title, description, className, children }) => {
 
   return (
     <motion.div
-      className={className}
       ref={ref}
       animate={controls}
       initial="hidden"
@@ -37,7 +36,7 @@ export const Section = ({ title, description, className, children }) => {
         mass: 1,
       }}
     >
-      <SectionHeader title={title} description={description} />
+      <SectionHeader title={title} className={className} color={color} />
       {children}
     </motion.div>
   );

@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { Section } from "../Section";
 import { Container } from "../Container";
 import { Project_Item } from "./Project_Item";
+import clsx from "clsx";
 
 const underline = {
   transition: {
@@ -14,7 +15,7 @@ const underline = {
   },
 };
 
-export const Project = ({ className }) => {
+export const Project = ({ className, styles }) => {
   const { ref, inView } = useInView();
   const animation = useAnimation();
 
@@ -36,19 +37,16 @@ export const Project = ({ className }) => {
   }, [animation, inView]);
 
   return (
-    <Container full>
-      <Section
-        className="mt-20 mb-16 md:mt-28 max-w-screen-[40%] sticky top-0"
-        title="Project"
-        description={`
-    I have selected some of the favourite Projects or works that I made. If
-    you feel interest feel free to check it on ${(<a> Github</a>)} and
-    ${(<a> learn Togethers </a>)}`}
-      >
-        <Project_Item className="mt-5" />
-        <Project_Item className="mt-5" odd="True" />
-        <Project_Item className="mt-5" />
+    <div className={clsx("bg-black-500 z-20 pb-20 p-8")} style={styles}>
+      <Section className="mt-15 md:mt-20" title="Project">
+        <Container ref={ref} className="">
+          <div className="px-5">
+            <Project_Item className="" />
+            <Project_Item className="mt-5" odd="True" />
+            <Project_Item className="mt-5" />
+          </div>
+        </Container>
       </Section>
-    </Container>
+    </div>
   );
 };

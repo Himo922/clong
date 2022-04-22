@@ -3,13 +3,14 @@ import { Section } from "../Section";
 import { Container } from "../Container";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import clsx from "clsx";
 
 import { FaRaspberryPi, FaReact, FaPython, FaNodeJs } from "react-icons/fa";
 import { SiDjango, SiMongodb, SiArduino } from "react-icons/si";
 
 import { SkillsItems } from "./SkillsItems";
 
-export const Skills = () => {
+export const Skills = ({ className, styles }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
@@ -23,27 +24,29 @@ export const Skills = () => {
   }, [controls, inView]);
 
   return (
-    <Section
-      className="mt-20 mb-16 md:mt-28"
-      title="Skills"
-      description="Passion to Learn. world grow and evolve every day, learn never stop."
-    >
-      <Container>
-        <div
-          className="max-w-md mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6"
-          ref={ref}
-        >
-          {skills.map((skill, index) => (
-            <SkillsItems
-              {...skill}
-              key={skill.name}
-              custom={index}
-              controls={controls}
-            />
-          ))}
-        </div>
-      </Container>
-    </Section>
+    <div className={clsx("pb-20 p-8")} style={styles}>
+      <Section className=" my-10" title="Skills">
+        <Container>
+          <h3>
+            Passion to Learn. world grow and evolve every day, learn never stop.
+          </h3>
+
+          <div
+            className="max-w-md mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6"
+            ref={ref}
+          >
+            {skills.map((skill, index) => (
+              <SkillsItems
+                {...skill}
+                key={skill.name}
+                custom={index}
+                controls={controls}
+              />
+            ))}
+          </div>
+        </Container>
+      </Section>
+    </div>
   );
 };
 

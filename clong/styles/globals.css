@@ -20,7 +20,7 @@ a {
 * {
   box-sizing: border-box;
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 0px;
   display: none;
 }
@@ -53,4 +53,4 @@ a {
   z-index: 10;
   scroll-snap-align: center;
   flex: none;
-}
+} */

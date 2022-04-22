@@ -79,7 +79,7 @@ export const NavBar = ({ className }) => {
         <Link href="/">
           <a className="flex items-center">
             {/* For Logo <img src="/docs/images/logo.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /> */}
-            <Logo className="z-10 ml-20 mt-2 self-center text-sm font-semibold whitespace-nowrap dark:text-orange-700 text-orange-500 uppercase" />
+            <Logo className="z-10 ml-2 md:ml-20 mt-2 self-center text-sm font-semibold whitespace-nowrap dark:text-orange-700 text-orange-500 uppercase" />
           </a>
         </Link>
 

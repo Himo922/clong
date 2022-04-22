@@ -4,16 +4,8 @@ import { useInView } from "react-intersection-observer";
 import { Section } from "../Section";
 import { Container } from "../Container";
 import clsx from "clsx";
-const underline = {
-  transition: {
-    delay: 0.5,
-    type: "spring",
-    stiffness: 400,
-    damping: 40,
-  },
-};
 
-export const Contact = ({ className }) => {
+export const Contact = ({ className, styles }) => {
   const { ref, inView } = useInView();
   const animation = useAnimation();
 
@@ -35,13 +27,22 @@ export const Contact = ({ className }) => {
   }, [animation, inView]);
 
   return (
-    <Section
-      id="#Contact"
-      className={clsx("mt-20 mb-80 md:mt-28 max-w-screen-[40%] ", className)}
-      title="Contact"
-      description={"Just Contact me and REach me "}
-    >
-      <Container>Call Me maybe~</Container>
-    </Section>
+    <div style={styles} ref={ref} className={clsx("pb-20 p-8 bg-blue-500")}>
+      <Section id="#Contact" title="Contact">
+        <Container>
+          <div className="px-5 pb-10">
+            <h3>
+              Reach me via email :
+              <span>
+                <a href="mailto: clong516@gmail.com" className="text-black-700">
+                  Send Email
+                </a>
+              </span>
+            </h3>
+            <div>Call Me maybe</div>
+          </div>
+        </Container>
+      </Section>
+    </div>
   );
 };

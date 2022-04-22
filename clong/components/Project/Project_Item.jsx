@@ -40,11 +40,11 @@ export const Project_Item = ({ className, odd }) => {
     <>
       <div
         className={clsx(
-          "flex flex-row container mt-12 justify-center items-center max-w-[80%] md:justify-between",
+          "flex flex-row container mt-12 justify-center items-center md:justify-between",
           odd && "md:flex-row-reverse"
         )}
       >
-        <div
+        {/* <div
           className={clsx(
             "z-40 mr-5 border-l-4 border-orange-700 ml-8 p-5 absolute md:relative",
             odd && "md:border-l-0",
@@ -59,19 +59,41 @@ export const Project_Item = ({ className, odd }) => {
           <p className="text-sm mb-5 font-normal">{description}</p>
 
           <h4> {technologies}</h4>
-        </div>
+        </div> */}
 
-        <div className="">
-          <motion.img
-            className="object-fill h-[400px] rounded-lg brightness-50
-          md:h-auto hover:brightness-100
+        <div className="flex flex-col md:flex-row">
+          <div className="md:flex-1">
+            <motion.img
+              className="object-fill rounded-lg brightness-80
+           md:h-auto hover:brightness-100
            md:opacity-100 md:dark:opacity-80"
-            src={imageLink}
-            alt={`image of ${title}`}
-            style={{
-              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.25)",
-            }}
-          />
+              src={imageLink}
+              alt={`image of ${title}`}
+              style={{
+                boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.25)",
+              }}
+            />
+          </div>
+
+          <div
+            className={clsx(
+              "z-40 border-orange-700 pt-3 mb-3 ",
+              "md:border-l-0 md:flex-1 md:border-l-4 md:ml-8 md:px-5",
+              odd && "md:border-r-4"
+            )}
+          >
+            <h3 className="text-xl mb-1 font-bold">
+              {title} <span className="text-orange-700 text-sm">&#47; </span>
+              <span className=" text-sm font-normal">
+                Software & UI Develop
+              </span>
+            </h3>
+            <h3 className="text-sm mb-5 font-normal">{year}</h3>
+            <p className="text-sm mb-5 font-normal hidden md:block">
+              {description}
+            </p>
+            <h4> {technologies}</h4>
+          </div>
         </div>
       </div>
     </>
