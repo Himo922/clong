@@ -68,7 +68,7 @@ export const NavBar = ({ className }) => {
   return (
     <motion.nav
       variants={navbarScrollVariants}
-      animate={hidden ? "hidden" : "visible"}
+      animate={isOpen ? "visible" : hidden ? "hidden" : "visible"}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
       className={clsx(
         "fixed top-0 z-20 px-2 sm:px-4 py-2.5 rounded w-full opacity-90 bg-transparent transition-top duration-300 top-0 m-0",
@@ -92,7 +92,7 @@ export const NavBar = ({ className }) => {
         >
           <MenuToggle
             toggle={() => toggleOpen()}
-            className="z-20 absolute top-[-10px]  m-0
+            className="z-50 absolute top-[-10px]  m-0
              w-[40px] h-[40px] md:hidden"
           />
         </motion.div>
@@ -110,7 +110,7 @@ export const NavBar = ({ className }) => {
             variants={sidebar}
           />
 
-          <Navigation className="w-full uppercase" isMobile />
+          <Navigation className="w-full uppercase ml-12" isMobile />
         </motion.div>
         {size.width > 800 && <Navigation className=" md:w-auto uppercase" />}
       </div>

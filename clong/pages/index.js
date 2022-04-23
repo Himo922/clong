@@ -24,26 +24,26 @@ export default function Home() {
 
   const [scrollY, setScrollY] = useState(0);
 
-  const onScroll = useCallback((event) => {
-    const { pageYOffset, scrollY } = window;
-    // console.log("yOffset", pageYOffset, "scrollY", scrollY);
-    setScrollY(window.pageYOffset);
-  }, []);
+  // const onScroll = useCallback((event) => {
+  //   const { pageYOffset, scrollY } = window;
+  //   // console.log("yOffset", pageYOffset, "scrollY", scrollY);
+  //   setScrollY(window.pageYOffset);
+  // }, []);
 
-  useEffect(() => {
-    //add eventlistener to window
-    window.addEventListener("scroll", onScroll, { passive: true });
-    // remove event on unmount to prevent a memory leak
-    () => window.removeEventListener("scroll", onScroll, { passive: true });
-  }, []);
+  // useEffect(() => {
+  //   //add eventlistener to window
+  //   window.addEventListener("scroll", onScroll, { passive: true });
+  //   // remove event on unmount to prevent a memory leak
+  //   () => window.removeEventListener("scroll", onScroll, { passive: true });
+  // }, []);
 
-  useEffect(() => {
-    const ids = [
-      setTimeout(() => setFanfare(false), 4800),
-      setTimeout(() => setMain(true), 5700),
-    ];
-    return () => ids.forEach((id) => clearTimeout(id));
-  }, [setFanfare]);
+  // useEffect(() => {
+  //   const ids = [
+  //     setTimeout(() => setFanfare(false), 4800),
+  //     setTimeout(() => setMain(true), 5700),
+  //   ];
+  //   return () => ids.forEach((id) => clearTimeout(id));
+  // }, [setFanfare]);
 
   return (
     <>
@@ -53,13 +53,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {
-        // <Fanfare control={fanfare} />'
-      }
+      {/* <Fanfare control={fanfare} /> */}
+
       <NavBar />
       <main className="min-h-screen font-sans bg-lightTheme dark:bg-darkTheme transition-colors -z-10 m-0">
-        <motion.div
-          className="mainContact scroll-smooth"
+        {/* <motion.div
+          className="mainContact"
           variants={{
             initial: {
               opacity: 0,
@@ -75,33 +74,30 @@ export default function Home() {
           transition={{
             duration: 1.0,
           }}
-        >
-          <div
-            className="min-h-screen w-full flex flex-col flex-1 justify-center z-10 
+        > */}
+        <div
+          className="min-h-screen w-full flex flex-col flex-1 justify-center z-10 
             justify-items-stretch  "
-          >
-            <Hero
-              className="mb-8 p-2 min-h-screen -z-10"
-              //styles={{ transform: `translateY(${scrollY}px)` }}
-            />
-            <About
-              className="w-screen"
-              //styles={{ transform: `translateY(-${scrollY}px)` }}
-            />
-            <Project
-              className="mx-4 my-8 p-2 px-10 md:px-36"
-              // styles={{ transform: `translateY(-${scrollY}px)` }}
-            />
-            <Skills
-              className="mx-4 my-8 p-2 px-10 md:px-36"
-              //styles={{ transform: `translateY(-${scrollY}px)` }}
-            />
-            <Contact
-              className="mx-4 my-8 p-2 px-10 md:px-36 "
-              //styles={{ transform: `translateY(-${scrollY}px)` }}
-            />
-          </div>
-        </motion.div>
+        >
+          <Hero className="mb-8 p-2 min-h-screen -z-10" />
+          <About
+            className="w-screen"
+            //styles={{ transform: `translateY(-${scrollY}px)` }}
+          />
+          <Project
+            className="mx-4 my-8 p-2 px-10 md:px-36"
+            // styles={{ transform: `translateY(-${scrollY}px)` }}
+          />
+          <Skills
+            className="mx-4 my-8 p-2 px-10 md:px-36"
+            //styles={{ transform: `translateY(-${scrollY}px)` }}
+          />
+          <Contact
+            className="mx-4 my-8 p-2 px-10 md:px-36 "
+            //styles={{ transform: `translateY(-${scrollY}px)` }}
+          />
+        </div>
+        {/* </motion.div> */}
       </main>
       <Footer />
     </>

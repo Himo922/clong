@@ -19,16 +19,15 @@ export const Navigation = ({ className, id, isMobile }) => (
     variants={variants}
     id={id}
     className={clsx(
-      " w-1/4 flex flex-col justify-end mt-[80%] md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:items-center",
+      "w-1/4 flex flex-col justify-end mt-[80%] md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:items-center",
       className
     )}
   >
     {navLists.map((item, index) => (
-      <MenuItem item={item} key={item} links={navLinks[index]} />
+      <MenuItem item={item} key={item} />
     ))}
-    {!isMobile && <ThemeTogger className="ml-20 text-orange-700 uppercase" />}
+    {/* {!isMobile && <ThemeTogger className="ml-20 text-orange-700 uppercase" />} */}
   </motion.ul>
 );
 
-const navLists = ["about", "work", "journey", "contact"];
-const navLinks = [`#about`, `#work`, `#journey`, `#contact`];
+const navLists = ["about", "project", "skill", "contact"];

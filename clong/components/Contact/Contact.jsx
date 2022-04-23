@@ -27,8 +27,13 @@ export const Contact = ({ className, styles }) => {
   }, [animation, inView]);
 
   return (
-    <div style={styles} ref={ref} className={clsx("pb-20 p-8 bg-blue-500")}>
-      <Section id="#Contact" title="Contact">
+    <div
+      id="contact"
+      style={styles}
+      ref={ref}
+      className={clsx("pb-20 p-8 bg-blue-500")}
+    >
+      <Section title="Contact">
         <Container>
           <div className="px-5 pb-10">
             <h3>
