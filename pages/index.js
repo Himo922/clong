@@ -56,25 +56,7 @@ export default function Home() {
       {/* <Fanfare control={fanfare} /> */}
 
       <NavBar />
-      <main className="min-h-screen font-sans bg-lightTheme dark:bg-darkTheme transition-colors -z-10 m-0">
-        {/* <motion.div
-          className="mainContact"
-          variants={{
-            initial: {
-              opacity: 0,
-              display: "none",
-            },
-            visible: {
-              opacity: 1,
-              display: "block",
-            },
-          }}
-          initial="initial"
-          animate={main ? "visible" : "initial"}
-          transition={{
-            duration: 1.0,
-          }}
-        > */}
+      <main className="min-h-screen font-sans bg-lightTheme dark:bg-darkTheme transition-colors -z-10 m-0 max-w-screen">
         <div
           className="min-h-screen w-full flex flex-col flex-1 justify-center z-10 
             justify-items-stretch  "

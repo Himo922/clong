@@ -75,7 +75,7 @@ const ProjectList = [
     description: "descriptiondescriptiondescriptiondescription",
     technologies: ["React", "TypeScript", "GraphQL"],
     githubLink: "https://github.com/clonglam/Stem-League",
-    imageLink: `/images/screen.png`,
+    imageLink: `/images/STEM Leage_phone.png`,
   },
   {
     title: "Cryptoverse nft",

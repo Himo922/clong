@@ -14,8 +14,9 @@ const variants = {
   },
 };
 
-export const Navigation = ({ className, id, isMobile }) => (
+export const Navigation = ({ className, id, toggle }) => (
   <motion.ul
+    onClick={toggle}
     variants={variants}
     id={id}
     className={clsx(

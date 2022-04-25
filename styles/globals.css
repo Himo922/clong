@@ -20,11 +20,13 @@ a {
 * {
   box-sizing: border-box;
 }
-/* ::-webkit-scrollbar {
+
+::-webkit-scrollbar {
   width: 0px;
   display: none;
 }
 
+/* 
 .snap-parent-y-mandatory {
   scroll-snap-type: y mandatory;
   overflow: scroll;
