@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@aws-amplify/ui-react": "^2.15.5",
     "@svgr/webpack": "^6.2.1",
     "aws-amplify": "^4.3.20",
     "clsx": "^1.1.1",
