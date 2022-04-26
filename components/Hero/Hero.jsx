@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Icons } from "./Icons";
 import { Section } from "../Section";
 import { Container } from "../Container";
-import Image from "next/image";
 import { Hero_image } from "/assets/Images/";
 
 import clsx from "clsx";
