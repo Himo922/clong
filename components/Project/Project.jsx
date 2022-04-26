@@ -70,29 +70,32 @@ export const Project = ({ className, styles }) => {
 const ProjectList = [
   {
     title: "STEM-League",
-    subtitle: "Software & UI Develop",
+    subtitle: "Software development",
     year: "2021",
-    description: "descriptiondescriptiondescriptiondescription",
-    technologies: ["React", "TypeScript", "GraphQL"],
+    description:
+      "STEM League, which is a learning tool kit for steam learning. I created the software parts of the project including low latency control via the web dashboard and software control on Rpi. It is currently used in a secondary school for learning STEM. ",
+    technologies: ["ReactJs", "RPi", "Flask"],
     githubLink: "https://github.com/clonglam/Stem-League",
     imageLink: `/images/STEM Leage_phone.png`,
   },
   {
     title: "Cryptoverse nft",
-    subtitle: "Frontend & Backend Develop",
+    subtitle: "Frontend & Backend Development",
     year: "2022",
-    description: "descriptiondescriptiondescriptiondescription",
+    description:
+      "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
     technologies: ["React", "nodejs", "apis"],
-    githubLink: "https://github.com/clonglam/Stem-League",
-    imageLink: `/images/screen.png`,
+    githubLink: "https://github.com/clonglam/",
+    imageLink: `/images/Coming_Soon.png`,
   },
   {
-    title: "Cryptoverse nft",
+    title: "e commerce",
     subtitle: "Frontend & Backend Develop",
     year: "2022",
-    description: "descriptiondescriptiondescriptiondescription",
+    description:
+      "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
     technologies: ["React", "nodejs", "apis"],
-    githubLink: "https://github.com/clonglam/Stem-League",
-    imageLink: `/images/screen.png`,
+    githubLink: "https://github.com/clonglam/",
+    imageLink: `/images/Coming_Soon.png`,
   },
 ];
