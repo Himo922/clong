@@ -43,7 +43,7 @@ export const About = ({ className, styles }) => {
       <Section className="" title="About" color="text-orange-700">
         <Container>
           <h3 className="mb-10">
-            “World grow & evolve every day, learn never stop.”
+            “World grow evolve every day, learn never stop.”
           </h3>
           <motion.div
             animate={animation}
@@ -67,7 +67,7 @@ export const About = ({ className, styles }) => {
 
               <h4 className="text-base max-w-[95%] md:text-2xl dark:text-white-700 text-black-700 md:mb-4">
                 Currently bassed in Vancourver. Love to do experimental stuff,
-                play with coding & hardware.
+                play with coding hardware.
               </h4>
               <h4 className="text-base max-w-[95%] md:text-2xl dark:text-white-700 text-black-700 md:mb-12">
                 4-Year Work Experience from front-end to full-stack.
@@ -77,7 +77,7 @@ export const About = ({ className, styles }) => {
                 Wanna Know more abnout me.
               </h4>
               <h4 className="text-base max-w-[95%] md:text-2xl dark:text-white-700 text-black-700 md:mb-4">
-                View my Works and projects at Github | Code Pen. "
+                View my Works and projects at Github | Code Pen
               </h4>
             </div>
           </motion.div>
