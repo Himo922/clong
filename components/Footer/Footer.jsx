@@ -9,7 +9,7 @@ export const Footer = () => {
         rel="noopener noreferrer"
         className="flex justify-center items-center grow"
       >
-        Create and Design by CLong Lam
+        Copyright © 2022 Create and Design by CLong Lam
       </a>
     </footer>
   );

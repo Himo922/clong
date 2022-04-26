@@ -5,7 +5,7 @@ import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import clsx from "clsx";
 
-import { FaRaspberryPi, FaReact, FaPython, FaNodeJs } from "react-icons/fa";
+import { FaRaspberryPi, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiDjango, SiMongodb, SiArduino } from "react-icons/si";
 
 import { SkillsItems } from "./SkillsItems";

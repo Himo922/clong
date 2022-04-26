@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { IconsItems } from "./IconsItems";
+import { contactItems } from "./IconsItems";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -33,9 +34,6 @@ export const Icons = ({ className }) => {
             controls={controls}
           />
         ))}
-        {/* <Icon_linkedin className="text-2xl fill-black-700 dark:fill-black-700" />
-        <Icon_github className="text-2xl fill-black-700 dark:fill-black-700" />
-        <Icon_twitter className="text-2xl fill-black-700 dark:fill-black-700" /> */}
       </div>
     </div>
   );

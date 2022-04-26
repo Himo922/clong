@@ -1,9 +1,13 @@
 import React, { useEffect } from "react";
 import { animations, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { ContactItems } from "./ContactItems";
 import { Section } from "../Section";
 import { Container } from "../Container";
 import clsx from "clsx";
+import { FaEnvelope } from "react-icons/fa";
+
+import { Icon_github, Icon_linkedin, Icon_twitter } from "../../assets/Images";
 
 export const Contact = ({ className, styles }) => {
   const { ref, inView } = useInView();
@@ -36,18 +40,50 @@ export const Contact = ({ className, styles }) => {
       <Section title="Contact">
         <Container>
           <div className="px-5 pb-10">
-            <h3>
-              Reach me via email :
-              <span>
-                <a href="mailto: clong516@gmail.com" className="text-black-700">
-                  Send Email
-                </a>
-              </span>
-            </h3>
-            <div>Call Me maybe</div>
+            <h2 className="mb-7">
+              Currently available for Hire, feel free to contact me via email.
+            </h2>
+            <div className="flex flex-col gap-5 justify-start" ref={ref}>
+              {LinksList.map((item, index) => (
+                <ContactItems
+                  {...item}
+                  key={item.name}
+                  custom={index}
+                  controls={animation}
+                />
+              ))}
+            </div>
           </div>
         </Container>
       </Section>
     </div>
   );
 };
+
+const LinksList = [
+  {
+    name: "Email",
+    href: "mailto: clong516@gmail.com",
+    icon: <FaEnvelope />,
+    comment: "Contact me via Email",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/clong-lam-188a10233/",
+    icon: <Icon_linkedin />,
+    comment: "Let's connect on LinkedIn",
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/clonglam",
+    icon: <Icon_github />,
+    comment: "Follow for open-source projects~ ",
+  },
+  {
+    name: "Twitter",
+    href: "https://twitter.com/ClongLam",
+    icon: <Icon_twitter />,
+    comment:
+      "Follow for web design & development articles, opinions, and links",
+  },
+];

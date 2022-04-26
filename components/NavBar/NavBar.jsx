@@ -69,16 +69,16 @@ export const NavBar = ({ className }) => {
       animate={isOpen ? "visible" : hidden ? "hidden" : "visible"}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
       className={clsx(
-        "fixed max-w-screen top-0 z-20 px-2",
-        "sm:px-4",
+        "fixed max-w-screen top-0 z-20 px-0 ml-4",
+        "md:px-1 md:ml-0",
         "py-2 rounded w-full opacity-90 bg-transparent transition-top duration-300 top-0 m-0",
         className
       )}
     >
       <div className="container flex flex-wrap justify-between px-5 md:justify-around items-center mx-auto dark:text-white-700">
-        <div className="z-10 md:ml-20 mt-2 self-center">
+        <div className="z-10 mt-2 self-center">
           <Link href="/">
-            <a className="flex items-center">
+            <a className="flex justify-start items-center">
               <Logo className="text-sm font-semibold whitespace-nowrap dark:text-orange-700 text-orange-500 uppercase" />
             </a>
           </Link>
