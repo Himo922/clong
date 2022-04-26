@@ -6,8 +6,6 @@ export const Layout = ({ children }) => {
       <main className="min-h-screen font-sans bg-lightTheme dark:bg-darkTheme transition-colors -z-10 m-0">
         {children}
       </main>
-
-      <Footer />
     </div>
   );
 };

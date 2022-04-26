@@ -6,7 +6,6 @@ import {
   Hero,
   About,
   Project,
-  Experience,
   Contact,
   Fanfare,
   NavBar,

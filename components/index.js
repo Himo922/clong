@@ -3,7 +3,6 @@ export * from "./Contact";
 export * from "./NavBar";
 export * from "./Hero";
 export * from "./Project";
-export * from "./Experience";
 export * from "./Skills";
 export * from "./Container";
 export * from "./About";
