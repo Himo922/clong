@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "clongwebmaster",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authclongwebmaster12eea0d0",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

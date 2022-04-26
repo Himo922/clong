@@ -38,6 +38,9 @@
           "appId": "d2i83yi5vpitgf",
           "type": "cicd"
         }
+      },
+      "auth": {
+        "clongwebmaster12eea0d0": {}
       }
     }
   }

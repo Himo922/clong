@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "clongwebmaster",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\Himo\\Desktop\\Cloong Journey\\clong-web-master\\amplify\\backend\\api\\clongwebmaster\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authclongwebmaster12eea0d0"
+    }
+  }
+}
