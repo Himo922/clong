@@ -21,7 +21,7 @@ export const Project_Item = ({
           "md:ml-10 md:justify-between"
         )}
       >
-        <div className="flex flex-col ">
+        <div className="flex flex-col grow ">
           <a href={githubLink} target="_blank" rel="noopener noreferrer">
             <div className="md:flex-1">
               <motion.img
@@ -48,9 +48,7 @@ export const Project_Item = ({
               <span className=" text-sm font-normal">{subtitle}</span>
             </h3>
             <h3 className="text-sm mb-2 font-normal">{year}</h3>
-            <p className="text-sm mb-2 font-normal hidden md:block">
-              {description}
-            </p>
+            <p className="text-sm mb-2 font-normal hidden ">{description}</p>
             {technologies.map((technology, index) => (
               <span
                 className="text-sm mb-5 font-normal "
