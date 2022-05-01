@@ -24,7 +24,11 @@ export const Skills = ({ className, styles }) => {
   }, [controls, inView]);
 
   return (
-    <div className={clsx("pb-20 p-8")} style={styles} id="skill">
+    <div
+      className={clsx("pb-20 p-8 drop-shadow-lg ")}
+      style={styles}
+      id="skill"
+    >
       <Section className=" my-10" title="Skills">
         <Container>
           <h3>

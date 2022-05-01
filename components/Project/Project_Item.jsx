@@ -18,7 +18,7 @@ export const Project_Item = ({
       <div
         className={clsx(
           "flex flex-row container mt-12 justify-center items-center",
-          "md:ml-10 md:justify-between"
+          "md:ml-10 md:justify-between grow"
         )}
       >
         <div className="flex flex-col grow ">

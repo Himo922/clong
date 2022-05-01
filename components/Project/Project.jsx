@@ -30,7 +30,7 @@ export const Project = ({ className, styles }) => {
 
   return (
     <div
-      className={clsx("bg-black-500 z-10 pb-20 p-8 md:min-h-screen")}
+      className={clsx("bg-blue-900 z-10 pb-20 p-8 md:min-[800px]")}
       style={styles}
       id="project"
       ref={ref}
@@ -41,24 +41,27 @@ export const Project = ({ className, styles }) => {
             Here are the choosen project,wanna know more simply click on the
             project and view it on github.
           </h3>
-          <div className="flex flex-col p-5 md:p-0 md:flex-row items-start justify-evenly ">
-            {ProjectList.map((project, index) => (
-              <Project_Item
-                {...project}
-                key={clsx(project.title, index)}
-                custom={index}
-                controls={controls}
-              />
-            ))}
 
-            <div className="hidden md:block md:ml-10 self-center">
-              <a
-                href="https://github.com/clonglam/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <h3> view More</h3>
-              </a>
+          <div className="flex flex-wrap">
+            <div className="flex  flex-col p-5 md:p-0 md:flex-row items-start justify-evenly ">
+              {ProjectList.map((project, index) => (
+                <Project_Item
+                  {...project}
+                  key={clsx(project.title, index)}
+                  custom={index}
+                  controls={controls}
+                />
+              ))}
+
+              <div className="hidden md:block md:ml-10 self-center">
+                <a
+                  href="https://github.com/clonglam/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <h3> view More</h3>
+                </a>
+              </div>
             </div>
           </div>
         </Container>
@@ -79,18 +82,18 @@ const ProjectList = [
     imageLink: `/images/STEM Leage_phone.png`,
   },
   {
-    title: "Cryptoverse nft",
-    subtitle: "Frontend & Backend Development",
+    title: "e commerce",
+    subtitle: "Frontend & headless CMS",
     year: "2022",
     description:
       "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
-    technologies: ["React", "nodejs", "apis"],
-    githubLink: "https://github.com/clonglam/",
-    imageLink: `/images/Coming_Soon.png`,
+    technologies: ["Nextjs", "headlessCMS", "apis"],
+    githubLink: "https://github.com/clonglam/staples-style-ecommerce",
+    imageLink: `/images/ecommerce-staples.png`,
   },
   {
-    title: "e commerce",
-    subtitle: "Frontend & Backend Develop",
+    title: "Cryptoverse nft",
+    subtitle: "Frontend & Backend Development",
     year: "2022",
     description:
       "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
