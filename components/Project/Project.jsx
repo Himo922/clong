@@ -82,7 +82,7 @@ const ProjectList = [
     imageLink: `/images/STEM Leage_phone.png`,
   },
   {
-    title: "e commerce",
+    title: "E-commerce ",
     subtitle: "Frontend & headless CMS",
     year: "2022",
     description:
@@ -92,12 +92,12 @@ const ProjectList = [
     imageLink: `/images/ecommerce-staples.png`,
   },
   {
-    title: "Cryptoverse nft",
+    title: "Trip Advisor",
     subtitle: "Frontend & Backend Development",
     year: "2022",
     description:
       "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
-    technologies: ["React", "nodejs", "apis"],
+    technologies: ["React", "datocms", "apis"],
     githubLink: "https://github.com/clonglam/",
     imageLink: `/images/Coming_Soon.png`,
   },
