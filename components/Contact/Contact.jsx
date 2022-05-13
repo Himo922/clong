@@ -7,7 +7,12 @@ import { Container } from "../Container";
 import clsx from "clsx";
 import { FaEnvelope } from "react-icons/fa";
 
-import { Icon_github, Icon_linkedin, Icon_twitter } from "../../assets/Images";
+import {
+  AiOutlineCodepen,
+  AiFillLinkedin,
+  AiOutlineTwitter,
+  AiOutlineGithub,
+} from "react-icons/ai";
 
 export const Contact = ({ className, styles }) => {
   const { ref, inView } = useInView();
@@ -70,19 +75,19 @@ const LinksList = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/clong-lam-188a10233/",
-    icon: <Icon_linkedin />,
+    icon: <AiFillLinkedin />,
     comment: "Let's connect on LinkedIn",
   },
   {
     name: "GitHub",
     href: "https://github.com/clonglam",
-    icon: <Icon_github />,
+    icon: <AiOutlineGithub />,
     comment: "Follow for open-source projects~ ",
   },
   {
     name: "Twitter",
     href: "https://twitter.com/ClongLam",
-    icon: <Icon_twitter />,
+    icon: <AiOutlineTwitter />,
     comment:
       "Follow for web design & development articles, opinions, and links",
   },
