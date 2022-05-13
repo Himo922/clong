@@ -3,12 +3,12 @@ import { IconsItems } from "./IconsItems";
 import { contactItems } from "./IconsItems";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
 import {
-  Icon_github,
-  Icon_linkedin,
-  Icon_twitter,
-} from "../../../assets/Images";
+  AiOutlineCodepen,
+  AiFillLinkedin,
+  AiOutlineTwitter,
+  AiOutlineGithub,
+} from "react-icons/ai";
 
 export const Icons = ({ className }) => {
   const controls = useAnimation();
@@ -43,16 +43,21 @@ const LinksList = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/clong-lam-188a10233/",
-    icon: <Icon_linkedin />,
+    icon: <AiFillLinkedin />,
   },
   {
     name: "GitHub",
     href: "https://github.com/clonglam",
-    icon: <Icon_github />,
+    icon: <AiOutlineGithub />,
   },
   {
     name: "Twitter",
     href: "https://twitter.com/ClongLam",
-    icon: <Icon_twitter />,
+    icon: <AiOutlineTwitter />,
+  },
+  {
+    name: "CodePen",
+    href: "https://codepen.io/himo922",
+    icon: <AiOutlineCodepen />,
   },
 ];
