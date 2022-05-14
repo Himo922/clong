@@ -8,3 +8,4 @@ export * from "./Container";
 export * from "./About";
 export * from "./Fanfare";
 export * from "./Footer";
+export * from "./Card";

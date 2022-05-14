@@ -1,123 +1,65 @@
 import React, { useRef, useCallback, useState, useEffect } from "react";
-import { Logo } from "../Logo";
-import { motion, useCycle, useViewportScroll } from "framer-motion";
-import { MenuToggle } from "./MenuToggle";
-import { Navigation } from "./Navigation";
-import { useDimensions } from "./use_dimensions";
 import Link from "next/link";
-import { useWindowSize } from "../../hooks/useWindowSize";
-import { ThemeTogger } from "./ThemeTogger";
 import clsx from "clsx";
 
-const sidebar = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2.5 + 200}px at 50% -40px )`,
-    transition: {
-      type: "spring",
-      stiffness: 20,
-      restDelta: 2,
-    },
-  }),
-  closed: {
-    clipPath: "circle(15px at 50% -40px )",
-    transition: {
-      delay: 0.5,
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
-    },
-  },
-};
-
-export const NavBar = ({ className }) => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef(null);
-
-  const { height } = useDimensions(containerRef);
-  const size = useWindowSize();
-
-  const { scrollY } = useViewportScroll();
-  /** this hook manages state **/
-  const [hidden, setHidden] = React.useState(false);
-
-  function navUpdate() {
-    if (scrollY?.current < scrollY?.prev) {
-      setHidden(false);
-    } else if (scrollY?.current > 100 && scrollY?.current > scrollY?.prev) {
-      setHidden(true);
-    }
-  }
-
-  React.useEffect(() => {
-    return scrollY.onChange(() => navUpdate());
-  });
-
-  const navbarScrollVariants = {
-    visible: { opacity: 1, y: 0 },
-
-    hidden: { opacity: 0, y: -25 },
-  };
-
-  const onClickHandler = () => {
-    setHidden(true);
-    console.log("button on click");
-  };
+export const NavBar = () => {
+  const [isActive, setIsActive] = useState("false");
 
   return (
-    <motion.nav
-      variants={navbarScrollVariants}
-      animate={isOpen ? "visible" : hidden ? "hidden" : "visible"}
-      transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
-      className={clsx(
-        "fixed max-w-screen top-0 z-20 px-0 ml-4",
-        "md:px-1 md:ml-0",
-        "py-2 rounded w-full opacity-90 bg-transparent transition-top duration-300 top-0 m-0",
-        className
-      )}
-    >
-      <div className="container flex flex-wrap justify-between px-5 md:justify-around items-center mx-auto dark:text-white-700">
-        <div className="z-10 mt-2 self-center">
-          <Link href="/">
-            <a className="flex justify-start items-center">
-              <Logo className="text-sm font-semibold whitespace-nowrap dark:text-orange-700 text-orange-500 uppercase" />
-            </a>
-          </Link>
-        </div>
-
-        <motion.div
-          initial={false}
-          animate={isOpen ? "open" : "closed"}
-          custom={height}
-          ref={containerRef}
-          className="block md:hidden top-[20px] left-[88%] min-w-[50px] h-[50px] m-0 p-0"
+    <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 nav-bar-container">
+      <div className="container flex flex-wrap justify-between items-center mx-auto fixed top-0 w-full z-[100]">
+        <a href="https://www.clong.pro" className="flex items-center">
+          <img
+            src="/images/logo.svg"
+            className="mr-3 h-6 sm:h-9"
+            alt="Flowbite Logo"
+          />
+          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+            CLong
+          </span>
+        </a>
+        <button
+          type="button"
+          onClick={() => {
+            setIsActive(!isActive);
+            console.log("isActive: ", isActive);
+          }}
+          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         >
-          <MenuToggle
-            toggle={() => toggleOpen()}
-            className="z-50 absolute top-[20px]  m-0
-             w-[40px] h-[40px] "
-          />
-        </motion.div>
+          open menu
+        </button>
 
-        <motion.div
-          className=" absolute top-0 left-0 w-screen p-0 md:w-auto md:hidden"
-          id="mobile-menu"
-          initial={false}
-          animate={isOpen ? "open" : "closed"}
-          custom={height}
-          ref={containerRef}
-        >
-          <motion.div
-            className="fixed w-screen h-screen bg-blue-900"
-            variants={sidebar}
-          />
-
-          <Navigation
-            className="w-full uppercase ml-12"
-            toggle={() => toggleOpen()}
-          />
-        </motion.div>
-        {size.width > 800 && <Navigation className=" md:w-auto uppercase" />}
+        {isActive && (
+          <div className="nav-menu w-full md:block md:w-auto" id="mobile-menu">
+            <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+              <li>
+                <Link
+                  href="/#about"
+                  className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                >
+                  <a>About</a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/project"
+                  className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  <a>Project</a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#contact"
+                  className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  <a>Contact</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
-    </motion.nav>
+    </nav>
   );
 };

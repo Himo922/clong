@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
       <div
-        className="min-h-screen w-full flex flex-col flex-1 justify-center z-10 
+        className="min-h-screen w-full flex flex-col flex-1 justify-center z-10 bg-white-900
             justify-items-stretch  "
       >
         <Hero className="mb-8 p-2 min-h-screen -z-10" />

@@ -26,6 +26,9 @@ a {
   display: none;
 }
 
+.nav-bar-container {
+  position: fixed;
+}
 /* 
 .snap-parent-y-mandatory {
   scroll-snap-type: y mandatory;

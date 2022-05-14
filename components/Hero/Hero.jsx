@@ -25,7 +25,7 @@ const item = {
 export const Hero = ({ className, styles }) => {
   return (
     <div
-      className=" bg-gradient-to-br from-blue-700 to-blue-500 drop-shadow-lg z-0 h-screen"
+      className=" bg-gradient-to-br from-blue-700 to-blue-500 drop-shadow-lg z-0 h-screen mt-10"
       style={styles}
     >
       <div

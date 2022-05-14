@@ -5,6 +5,11 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      zIndex: {
+        100: "100",
+        1000: "1000",
+        10000: "10000",
+      },
       colors: {
         darkTheme: "#112135",
         white: {
