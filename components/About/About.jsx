@@ -7,44 +7,51 @@ import { useInView } from "react-intersection-observer";
 import { Testing_image, Hero_image } from "../../assets/Images";
 
 export const About = ({ className, styles }) => {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
   const animation = useAnimation();
 
   useEffect(() => {
     console.log("use Effect,inView =", inView);
     if (inView) {
-      animation.start({
-        x: 0,
-        opacity: 1,
-        transition: {
-          delay: 0.2,
-          duration: 1.2,
-          ease: "easeOut",
-          stiffness: 400,
-          damping: 40,
-        },
-      });
+      // animation.start({
+      //   x: 0,
+      //   opacity: 1,
+      //   transition: {
+      //     delay: 0.2,
+      //     duration: 1.2,
+      //     ease: "easeOut",
+      //     stiffness: 400,
+      //     damping: 40,
+      //   },
+      // });
     }
     if (!inView) {
-      animation.start({ x: "-100vw", opacity: 0 });
+      // only show onetime
     }
   }, [animation, inView]);
 
   return (
-    <div
-      id="about"
-      className={clsx(
-        "z-10 bg-blue-900 w-screen m-0 min-h-[600px] p-8 md:min-h-[800px]",
-        className
-      )}
-      style={styles}
-      ref={ref}
-    >
-      <Section className="" title="About" color="text-orange-700">
-        <Container>
-          <h3 className="mb-10">
-            “World grow evolve every day, learn never stop.”
-          </h3>
+    <>
+      <div
+        id="about"
+        className={clsx(
+          "bg-white-800 w-full m-0 min-h-[600px] p-8 md:min-h-[800px]",
+          className
+        )}
+        style={styles}
+        ref={ref}
+      >
+        <Section
+          sectionClass=""
+          headerClass="text-black-900"
+          title="About"
+          color="text-black-900"
+          theme="light"
+          description="World grow evolve every day, learn never stop."
+        >
           <motion.div
             animate={animation}
             className={clsx(
@@ -62,7 +69,7 @@ export const About = ({ className, styles }) => {
 
             <div>
               <h4 className="text-base max-w-[95%] md:text-2xl dark:text-white-700 text-black-700 md:mb-12">
-                Hi, I am CLong Lam. A Software Developer and Media Designer.
+                Hi, I am CLong Lam. A Web Developer and Media Designer.
               </h4>
 
               <h4 className="text-base max-w-[95%] md:text-2xl dark:text-white-700 text-black-700 md:mb-4">
@@ -77,12 +84,19 @@ export const About = ({ className, styles }) => {
                 Wanna Know more abnout me.
               </h4>
               <h4 className="text-base max-w-[95%] md:text-2xl dark:text-white-700 text-black-700 md:mb-4">
-                View my Works and projects at Github | Code Pen
+                View my Works and projects at{" "}
+                <span>
+                  <a href="https://github.com/clonglam">Github</a>
+                </span>
+                |{" "}
+                <span>
+                  <a href="https://codepen.io/himo922">Code Pen</a>
+                </span>
               </h4>
             </div>
           </motion.div>
-        </Container>
-      </Section>
-    </div>
+        </Section>
+      </div>
+    </>
   );
 };

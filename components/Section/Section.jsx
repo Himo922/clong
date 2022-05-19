@@ -1,43 +1,46 @@
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
-
+// import { useTheme } from "next-themes";
+import clsx from "clsx";
 import { SectionHeader } from "./SectionHeader";
 
-export const Section = ({ title, description, className, children, color }) => {
-  const controls = useAnimation();
+export const Section = ({
+  title,
+  description,
+  sectionClass,
+  headerClass,
+  children,
+  color,
+  themeProps,
+}) => {
   const [ref, inView] = useInView();
+  // const { theme, setTheme } = useTheme();
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    // const position = this.myRef.current.scrollTop;
+    setScrollPosition(position);
+  };
 
   useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      variants={{
-        hidden: {
-          y: 30,
-          opacity: 0,
-        },
-        visible: {
-          y: 0,
-          opacity: 1,
-        },
-      }}
-      transition={{
-        delay: 0.4,
-        duration: 0.5,
-        damping: 10,
-        mass: 1,
-      }}
-    >
-      <SectionHeader title={title} className={className} color={color} />
+    <section ref={ref} className={clsx("py-[100px]", sectionClass)}>
+      <SectionHeader
+        title={title}
+        headerClass={headerClass}
+        description={description}
+      />
+      {scrollPosition}
       {children}
-    </motion.div>
+    </section>
   );
 };

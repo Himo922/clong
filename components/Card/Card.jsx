@@ -12,7 +12,9 @@ export const Card = ({ title, desc, href, technologies, imageSrc }) => {
       </a>
       <div className="p-5">
         <a href={href}>
-          {technologies.map((technology) => technology)}
+          {technologies.map(
+            (technology, index) => `${index != 0 && " | "} ${technology}`
+          )}
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {title}
           </h5>

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import Head from "next/head";
-
-import { NavBar, Footer } from "../../components";
+import { NavBar, Footer } from "..";
 
 const Layout = ({ children }) => {
+  const ref = useRef(null);
+
   return (
     <div className="layout">
       <Head>
@@ -16,7 +17,11 @@ const Layout = ({ children }) => {
         <NavBar />
       </header>
 
-      <main className="main-container min-h-screen font-sans bg-lightTheme dark:bg-darkTheme transition-colors m-0 ">
+      <main
+        className="main-container min-h-screen font-sans bg-lightTheme dark:bg-darkTheme transition-colors m-0 "
+        id="main-container"
+        ref={ref}
+      >
         {children}
       </main>
 

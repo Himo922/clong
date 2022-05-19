@@ -26,7 +26,7 @@ export const MenuItem = ({ item }) => {
   return (
     <motion.li
       className="flex z-10 items-center mb-20 py-2 pl-3 text-orange-500 border-b 
-      md:items-center border-orange-500 overflow-auto text-lg
+      md:items-center border-orange-500  text-lg
       md:hover:bg-transparent md:hover:text-blue-700 
       md:border-0 md:p-0 md:py-0 md:my-0 md:text-sm 
       dark:hover:text-white dark:border-gray-700 dark:text-orange-700

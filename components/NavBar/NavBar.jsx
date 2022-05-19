@@ -1,23 +1,28 @@
 import React, { useRef, useCallback, useState, useEffect } from "react";
 import Link from "next/link";
 import clsx from "clsx";
+import { useWindowSize } from "./useWindowSize";
 
 export const NavBar = () => {
-  const [isActive, setIsActive] = useState("false");
+  const [isActive, setIsActive] = useState(false);
+  const { width, height } = useWindowSize();
 
   return (
-    <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 nav-bar-container">
-      <div className="container flex flex-wrap justify-between items-center mx-auto fixed top-0 w-full z-[100]">
-        <a href="https://www.clong.pro" className="flex items-center">
-          <img
-            src="/images/logo.svg"
-            className="mr-3 h-6 sm:h-9"
-            alt="Flowbite Logo"
-          />
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            CLong
-          </span>
-        </a>
+    <nav className="nav-section-container bg-white-900 border-gray-200 px-2 sm:px-4 md:px-5 py-2.5 dark:bg-gray-800 fixed top-0 w-full z-1000 ">
+      <div className="container flex flex-wrap justify-between items-center max-w-[1200px] mx-auto ">
+        <Link href="https://www.clong.pro">
+          <a className="flex items-center">
+            <img
+              src="/images/logo.svg"
+              className="mr-3 h-6 sm:h-9"
+              alt="Flowbite Logo"
+            />
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              CLong
+            </span>
+          </a>
+        </Link>
+
         <button
           type="button"
           onClick={() => {
@@ -29,7 +34,7 @@ export const NavBar = () => {
           open menu
         </button>
 
-        {isActive && (
+        {(isActive || width > 768) && (
           <div className="nav-menu w-full md:block md:w-auto" id="mobile-menu">
             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
               <li>
