@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { Container } from "../Container";
 import { animations, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { AboutCutOff } from "./AboutCutOff";
 import { Testing_image, Hero_image } from "../../assets/Images";
 
 export const About = ({ className, styles }) => {
@@ -35,10 +36,11 @@ export const About = ({ className, styles }) => {
 
   return (
     <>
+      <AboutCutOff />
       <div
         id="about"
         className={clsx(
-          "bg-white-800 w-full m-0 min-h-[600px] p-8 md:min-h-[800px]",
+          "bg-white-800 w-full m-0 min-h-[600px] p-4 md:min-h-[800px] z-5",
           className
         )}
         style={styles}

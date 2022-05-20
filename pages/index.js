@@ -23,12 +23,13 @@ export default function Home() {
   const [main, setMain] = useState(false);
 
   const [scrollY, setScrollY] = useState(0);
-
+  const { width, height } = useWindowSize();
   return (
     <>
       <div className="min-h-screen w-full flex flex-col flex-1 justify-center bg-white-900 justify-items-stretch  ">
-        {/* <HeroPendulum /> */}
+        <HeroPendulum c_width={width} c_height={height} />
         <Hero className="w-full" />
+
         <About
           className="w-full"
           //styles={{ transform: `translateY(-${scrollY}px)` }}

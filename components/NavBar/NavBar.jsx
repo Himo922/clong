@@ -8,7 +8,7 @@ export const NavBar = () => {
   const { width, height } = useWindowSize();
 
   return (
-    <nav className="nav-section-container bg-white-900 border-gray-200 px-2 sm:px-4 md:px-5 py-2.5 dark:bg-gray-800 fixed top-0 w-full z-1000 ">
+    <nav className="nav-section-container w-full bg-white-900 border-gray-200 px-10 py-2.5 dark:bg-gray-800 fixed top-0 z-1000 ">
       <div className="container flex flex-wrap justify-between items-center max-w-[1200px] mx-auto ">
         <Link href="https://www.clong.pro">
           <a className="flex items-center">

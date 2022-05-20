@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import useDimensions from "../../hooks/useDimensions";
 
 var agents = [];
-var agentCount = 400;
+var agentCount = 4000;
 var noiseScale = 350;
 var noiseStrength = 10;
 var overlayAlpha = 10;
@@ -64,7 +64,7 @@ Agent.prototype.update2 = function (
   this.update(myp5, strokeWidth);
 };
 
-export const HeroPendulum = ({ sketchReff }) => {
+export const HeroPendulum = ({ sketchReff, c_width, c_height }) => {
   // https://codesandbox.io/s/react-p5-forked-ri866?file=/src/index.js
   // https://codesandbox.io/s/ethblock-art-visual-algorithm-template-p5-forked-8l8x4c?file=/src/YourStyle.js
   // Will only import `react-p5` on client-side
@@ -75,8 +75,9 @@ export const HeroPendulum = ({ sketchReff }) => {
   const canvasRef = useRef(null);
 
   const setup = (p5, canvasParentRef) => {
-    const width = window.innerWidth;
-    const height = 1000;
+    const width = c_width;
+    const height = c_height;
+    agentCount = width / 2;
 
     p5.createCanvas(width, height).parent(canvasParentRef);
 

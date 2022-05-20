@@ -33,6 +33,16 @@ a {
 }
 
 .main-container {
+  /* max-width: 1200px;
+  margin: auto; */
+}
+
+.hero-greeting {
+  position: absolute;
+  bottom: 20%;
+}
+
+section {
   max-width: 1200px;
   margin: auto;
 }
@@ -46,160 +56,108 @@ a {
 
 .hero-section-container {
   background: rgba(255, 255, 255, 100);
-  height: 800px;
   filter: drop-shadow(0 1px 0.5px rgb(0 0 0 / 0.05));
 }
 .nav-section-container {
   filter: drop-shadow(0 2px 0.5px rgb(0 0 0 / 0.05));
 }
 
-/* 
-.snap-parent-y-mandatory {
-  scroll-snap-type: y mandatory;
-  overflow: scroll;
-  height: 100vh;
-  width: 100%;
-  -webkit-overflow-scrolling: touch;
-}
-
-.snap-parent-y-proximity {
-  scroll-snap-type: y proximity;
-  overflow: scroll;
-  height: 100vh;
-  width: 100%;
-  -webkit-overflow-scrolling: touch;
-}
-
-.snap-child-start {
-  opacity: 0.5;
-  z-index: 10;
-  scroll-snap-align: start;
-  flex: none;
-}
-
-.snap-child-center {
-  opacity: 0.5;
-  z-index: 10;
-  scroll-snap-align: center;
-  flex: none;
-} */
-
-.gallery-wrap {
-  background-color: #d53f41;
-  margin-left: -5vw;
-  margin-right: -5vw;
-}
-
-.gallery-counter {
-  position: absolute;
-  top: 10%;
-  left: 100px;
-  z-index: 1;
-  mix-blend-mode: difference;
-  line-height: 16px;
-  color: #dbd8d6;
-
-  font-family: "Bai Jamjuree";
-  font-weight: 600;
-
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-}
-.divider {
-  content: "";
-  background-color: white;
-  width: 6.25vw;
-  margin: 7px 10px;
-  height: 1px;
-  display: inline-block;
-}
-
-.gallery {
-  height: 80vh;
-
-  padding: 10vh 0;
-  width: 400%;
-  display: flex;
-  flex-wrap: nowrap;
-}
-.gallery-item {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  will-change: transform;
-}
-
-.gallery-item-info {
-  position: absolute;
-  bottom: 10%;
-  z-index: 1;
-  transform: translateX(-20%);
-  color: #dbd8d6;
-  color: white;
-}
-.gallery-info-title {
-  line-height: 6vw;
-  font-family: "Bai Jamjuree";
-  font-weight: 600;
-
-  font-size: 6vw;
-  -webkit-font-smoothing: antialiased;
-}
-
-.gallery-info-subtitle {
-  position: relative;
-  line-height: 6vw;
-  color: transparent;
-  font-family: "Bodoni Moda";
-  font-weight: 400;
-  font-size: 6vw;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke: 2px #dbd8d6;
-}
-
-.gallery-info-category {
-  position: relative;
-  line-height: 24px;
-  font-family: "Bai Jamjuree";
-  font-weight: 400;
-  font-size: 24px;
-  -webkit-font-smoothing: antialiased;
-  margin-top: 2vh;
-}
-
-.gallery-item-wrapper {
-  aspect-ratio: 16/9;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 20vw 1fr 200px;
-  width: 100vw;
-}
-/* .gallery-item-wrapper .is-reveal {
-
-      .gallery-item-image {
-        transform: scale(1);
-        filter: none;
-      
-    
-  }*/
-.gallery-item-image {
-  background-size: cover;
-  background-position: center;
-  transform-origin: center;
-  width: 100%;
-  height: 100%;
-  will-change: transform;
-  transform: scale(0.7);
-  transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
-  filter: grayscale(100%) sepia(20%) brightness(80%);
+.hero-section-container {
+  background: rgba(255, 255, 255, 0);
 }
 
 .p5Canvas {
-  top: 50%;
-  left: 50%;
+  top: 0%;
+  left: 0%;
   position: absolute;
   width: 100vw;
+  padding: 0;
+  margin: 0;
   height: 1000px;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
+}
+.react-p5 {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+}
+
+.rolling-heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1200px;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  margin: 0;
+  font-size: 64px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: -30%;
+  transform: translateY(-50%);
+  z-index: 1;
+  white-space: nowrap;
+}
+.about-cf-container {
+  max-width: 600px;
+  margin: auto;
+  width: 90%;
+  padding: 200px 0px;
+  position: relative;
+}
+
+.paralax-title {
+  position: relative;
+  display: block;
+}
+
+.inner-container {
+  background: black;
+  position: relative;
+  z-index: 2;
+  background-size: cover;
+  background-position: center;
+}
+
+.outer-container {
+  margin: auto;
+  width: 100%;
+  height: 400px;
+  padding: 20px 0px;
+  position: relative;
+}
+
+.image-container {
+  padding-bottom: (1/1) * 100%;
+  background: black;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  background-size: cover;
+  background-position: center;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 64px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: -30%;
+  transform: translateY(-50%);
+  z-index: 1;
+  white-space: nowrap;
+}
+.on-dark {
+  color: white;
+}
+
+.about-cut-off-container {
+  overflow: hidden;
+}
+.paralax-title {
+  position: relative;
+  display: block;
 }
