@@ -13,6 +13,7 @@ import {
 } from "../components";
 import { HeroPendulum } from "../components/Hero/HeroPendulum";
 import { useWindowSize } from "../hooks/useWindowSize";
+import { Gallery } from "../components/Project/Gallery";
 import { motion, useTransform, useElementScroll } from "framer-motion";
 
 import { useInView } from "react-intersection-observer";
@@ -28,12 +29,14 @@ export default function Home() {
     <>
       <div className="min-h-screen w-full flex flex-col flex-1 justify-center bg-white-900 justify-items-stretch  ">
         <HeroPendulum c_width={width} c_height={height} />
-        <Hero className="w-full" />
 
+        <Hero className="w-full " />
+        {`width:${width} : height:${height}`}
         <About
           className="w-full"
           //styles={{ transform: `translateY(-${scrollY}px)` }}
         />
+        <Gallery />
         <Project
           className="mx-4 my-8 p-2 px-10 md:px-36"
           // styles={{ transform: `translateY(-${scrollY}px)` }}

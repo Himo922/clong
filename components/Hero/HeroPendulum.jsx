@@ -76,11 +76,10 @@ export const HeroPendulum = ({ sketchReff, c_width, c_height }) => {
 
   const setup = (p5, canvasParentRef) => {
     const width = c_width;
-    const height = c_height;
+    const height = 800;
     agentCount = width / 2;
 
-    p5.createCanvas(width, height).parent(canvasParentRef);
-
+    p5.createCanvas(window.innerWidth, 800).parent(canvasParentRef);
     for (var i = 0; i < agentCount; i++) {
       agents[i] = new Agent(p5);
     }
@@ -90,6 +89,7 @@ export const HeroPendulum = ({ sketchReff, c_width, c_height }) => {
     p5.fill(255, overlayAlpha);
     p5.noStroke();
     p5.rect(0, 0, p5.width, p5.height);
+    // p5.rect(0, 0, c_width, c_height);
 
     // Draw agents
     p5.stroke(0, agentAlpha);
@@ -108,33 +108,3 @@ export const HeroPendulum = ({ sketchReff, c_width, c_height }) => {
 };
 
 export default HeroPendulum;
-
-// import React, { useEffect, useRef, useState } from "react";
-// import { Canvas } from "./Canvas";
-
-// export const HeroPendulum = () => {
-//   let r1 = 100;
-//   let r2 = 100;
-//   let m1 = 100;
-//   let m2 = 100;
-//   let a1 = 0;
-//   let a2 = 0;
-
-//   const draw = (ctx, frameCount) => {
-//     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-//     ctx.fillStyle = "#000000";
-//     ctx.beginPath();
-//     ctx.arc(50, 100, 20 * Math.sin(frameCount * 0.05) ** 2, 0, 2 * Math.PI);
-//     ctx.fill();
-
-//     let x1 = r1 * Math.sin(a1);
-//     let y1 = r1 * Math.cos(a1);
-
-//     ctx.beginPath();
-//     ctx.moveTo(0, 0);
-//     ctx.lineTo(x1, y1);
-//     // ctx.ellipse(x1, y1, m1, m1);
-//   };
-
-//   return <Canvas draw={draw} />;
-// };
