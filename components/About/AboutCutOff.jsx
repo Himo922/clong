@@ -11,14 +11,16 @@ export const AboutCutOff = () => {
       let paralaxTitles = document.querySelectorAll(".paralax-title");
 
       paralaxTitles.forEach((element, index) => {
-        element.style.transform = "translateX(" + window.scrollY / 10 + "%)";
+        // console.log(element.dataset.direction);
+        if (element.dataset.direction == "left") {
+          element.style.transform = "translateX(" + window.scrollY / 20 + "%)";
+        } else {
+          element.style.transform = "translateX(" + -window.scrollY / 20 + "%)";
+        }
       });
-
-      console.log("Iam moving");
     };
 
     if (inView) {
-      console.log(" I am in view");
       window.addEventListener("scroll", scrollInProgress);
     }
 
@@ -29,8 +31,16 @@ export const AboutCutOff = () => {
     <div className="about-cut-off-container min-h-[200px]">
       <div className="outer-container" ref={ref}>
         <h2 className="section-title">
-          {`Header inside viewport ${inView}.`}
-          <span className="paralax-title">Live The Adventure</span>
+          {/* <p className="paralax-title">
+            Leorem ashjklfh a aklshfklals aklhlk asf
+          </p> */}
+          <p className="paralax-title " data-direction="left">
+            {" "}
+            About ME
+          </p>
+          <p className="paralax-title" data-direction="right">
+            Live The Adventure
+          </p>
         </h2>
       </div>
     </div>

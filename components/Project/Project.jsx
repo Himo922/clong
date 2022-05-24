@@ -5,56 +5,29 @@ import { Section } from "../Section";
 import { Container } from "../Container";
 import { Project_Item } from "./Project_Item";
 import { data } from "../../src/data";
-import Gallery from "./Gallery";
+import { Gallery } from "./Gallery";
 import clsx from "clsx";
 import gsap from "gsap";
-import { ProjectCutOff } from "./ProjectCutOff";
+import { ProjectCutOff2 } from "./projectCutOff2";
+import { ProjectGallery } from "./ProjectGallery";
 
 export const Project = ({ className, styles }) => {
   const { ref, inView } = useInView();
-  const boxRef = useRef();
-
-  useEffect(() => {
-    gsap.to(boxRef.current, { rotation: "+=360" });
-  });
-
+  // const boxRef = useRef();
   return (
     <>
-      <ProjectCutOff />
-      <div
-        className={clsx("bg-white-900 z-10 pb-20 p-8 md:min-[800px]")}
-        style={styles}
-        id="project"
-        ref={ref}
-      >
-        <Section className="mt-15 md:mt-20" title="Project">
-          <h3 className="md:mb-40">
-            Here are the choosen project,wanna know more simply click on the
-            project and view it on github.
-          </h3>
+      <div ref={ref} id="project">
+        {/* <div className="py-10 px-10 items-center bg-white">
+          <h3 className="hidden">selected-Project</h3>
+          <p className="text-[96px] font-bold text-[#1d1d1f] ">Project</p>
+          <p className="text-[48px] font-medium text-[#1d1d1f] ">
+            <span>COOL</span> project
+          </p>
+        </div> */}
 
-          <div className="flex flex-wrap">
-            <div className="flex flex-col p-5 md:p-0 md:flex-row items-start justify-evenly ">
-              {data.map((project, index) => (
-                <Project_Item
-                  {...project}
-                  key={clsx(project.title, index)}
-                  custom={index}
-                />
-              ))}
+        <ProjectGallery />
 
-              <div className="hidden md:block md:ml-10 self-center">
-                <a
-                  href="https://github.com/clonglam/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <h3> view More</h3>
-                </a>
-              </div>
-            </div>
-          </div>
-        </Section>
+        <ProjectCutOff2 />
       </div>
     </>
   );

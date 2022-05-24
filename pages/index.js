@@ -10,6 +10,7 @@ import {
   Fanfare,
   NavBar,
   Footer,
+  Works,
 } from "../components";
 import { HeroPendulum } from "../components/Hero/HeroPendulum";
 import { useWindowSize } from "../hooks/useWindowSize";
@@ -31,20 +32,21 @@ export default function Home() {
         <HeroPendulum c_width={width} c_height={height} />
 
         <Hero className="w-full " />
-        {`width:${width} : height:${height}`}
-        <About
+
+        {/* <About
           className="w-full"
           //styles={{ transform: `translateY(-${scrollY}px)` }}
-        />
-        <Gallery />
+        /> */}
+        <Works />
         <Project
           className="mx-4 my-8 p-2 px-10 md:px-36"
           // styles={{ transform: `translateY(-${scrollY}px)` }}
         />
-        <Skills
+        {/* <Gallery /> */}
+        {/* <Skills
           className="mx-4 my-8 p-2 px-10 md:px-36"
           //styles={{ transform: `translateY(-${scrollY}px)` }}
-        />
+        /> */}
         <Contact
           className="mx-4 my-8 p-2 px-10 md:px-36 "
           //styles={{ transform: `translateY(-${scrollY}px)` }}

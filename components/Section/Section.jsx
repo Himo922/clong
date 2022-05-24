@@ -39,7 +39,7 @@ export const Section = ({
         headerClass={headerClass}
         description={description}
       />
-      {scrollPosition}
+
       {children}
     </section>
   );

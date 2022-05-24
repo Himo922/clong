@@ -113,6 +113,12 @@ section {
 .paralax-title {
   position: relative;
   display: block;
+
+  line-height: 6vw;
+  /* color: transparent; */
+  color: black;
+  font-weight: 700;
+  font-size: 8vw;
 }
 
 .inner-container {
@@ -160,7 +166,159 @@ section {
 .about-cut-off-container {
   overflow: hidden;
 }
-.paralax-title {
+
+.pco-grid-item {
+  background: #e2e2fc;
+  border-radius: 0.75rem;
+}
+
+.project-hovered {
+  background-color: blue;
+}
+
+.colorBox {
+  background-color: #636366;
+  text-align: center;
+  border-radius: 0.25rem;
+  padding: 2px;
+  aspect-ratio: 1;
+  margin: 0.1rem;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 50ms;
+}
+
+.colorBox:hover {
+  background-color: #8e8e93;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+}
+
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+
+#color-box-container {
+  display: grid;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.gallery-wrap {
+  background-color: #d53f41;
+  margin-left: -5vw;
+  margin-right: -5vw;
+}
+
+.gallery-counter {
+  position: absolute;
+  top: 10%;
+  left: 100px;
+  z-index: 1;
+  mix-blend-mode: difference;
+  line-height: 16px;
+  color: #dbd8d6;
+
+  font-family: "Bai Jamjuree";
+  font-weight: 600;
+
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+}
+.divider {
+  content: "";
+  background-color: white;
+  width: 6.25vw;
+  margin: 7px 10px;
+  height: 1px;
+  display: inline-block;
+}
+
+.gallery {
+  height: 80vh;
+  padding: 10vh 5vh;
+  width: auto;
+  display: flex;
+  flex-wrap: nowrap;
+
   position: relative;
-  display: block;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+.gallery-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gallery-item-info {
+  position: absolute;
+  bottom: 10%;
+  z-index: 1;
+  transform: translateX(-20%);
+  color: #dbd8d6;
+  color: white;
+}
+.gallery-info-title {
+  line-height: 6vw;
+  font-family: "Bai Jamjuree";
+  font-weight: 600;
+
+  font-size: 6vw;
+  -webkit-font-smoothing: antialiased;
+}
+
+.gallery-info-subtitle {
+  position: relative;
+  line-height: 6vw;
+  color: transparent;
+  font-family: "Bodoni Moda";
+  font-weight: 400;
+  font-size: 6vw;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 2px #dbd8d6;
+}
+
+.gallery-info-category {
+  position: relative;
+  line-height: 24px;
+  font-family: "Bai Jamjuree";
+  font-weight: 400;
+  font-size: 24px;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 2vh;
+}
+
+.gallery-item-wrapper {
+  aspect-ratio: 16/9;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20vw 1fr 200px;
+  width: 100vw;
+}
+
+.gallery-item-image .is-reveal {
+  transform: scale(1);
+  filter: none;
+}
+
+.gallery-item-image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  transform-origin: center;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.7), translateX(-100%);
+  transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+  filter: grayscale(100%) sepia(20%) brightness(80%);
 }
