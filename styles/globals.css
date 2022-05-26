@@ -11,6 +11,14 @@ body {
   scroll-behavior: smooth;
 }
 
+.parent {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -37,6 +45,12 @@ a {
   margin: auto; */
 }
 
+.nav-menu {
+  z-index: -1;
+  left: 0;
+  transform: translateX(100vw);
+}
+
 .hero-greeting {
   position: absolute;
   bottom: 20%;
@@ -60,8 +74,26 @@ section {
 }
 .nav-section-container {
   filter: drop-shadow(0 2px 0.5px rgb(0 0 0 / 0.05));
+  background-color: rgba(255, 255, 255, 0);
 }
+.nav-section-blur {
+  /* Add the blur effect */
+  position: absolute;
+  z-index: -1;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 80%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
 
+  /* Full height */
+  height: 30px;
+  width: 100vw;
+}
 .hero-section-container {
   background: rgba(255, 255, 255, 0);
 }

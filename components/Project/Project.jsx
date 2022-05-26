@@ -17,14 +17,6 @@ export const Project = ({ className, styles }) => {
   return (
     <>
       <div ref={ref} id="project">
-        {/* <div className="py-10 px-10 items-center bg-white">
-          <h3 className="hidden">selected-Project</h3>
-          <p className="text-[96px] font-bold text-[#1d1d1f] ">Project</p>
-          <p className="text-[48px] font-medium text-[#1d1d1f] ">
-            <span>COOL</span> project
-          </p>
-        </div> */}
-
         <ProjectGallery />
 
         <ProjectCutOff2 />
@@ -63,38 +55,5 @@ const ProjectList = [
     technologies: ["React", "datocms", "apis"],
     githubLink: "https://github.com/clonglam/",
     imageLink: `/images/Coming_Soon.png`,
-  },
-];
-
-const ImageList = [
-  {
-    imageLink: `/images/STEM Leage_phone.png`,
-  },
-  {
-    imageLink: `/images/STEM Leage_phone.png`,
-  },
-  {
-    imageLink: `/images/STEM Leage_phone.png`,
-  },
-  {
-    imageLink: `/images/STEM Leage_phone.png`,
-  },
-  {
-    imageLink: `/images/STEM Leage_phone.png`,
-  },
-  {
-    imageLink: `/images/STEM Leage_phone.png`,
-  },
-  {
-    imageLink: `/images/STEM Leage_phone.png`,
-  },
-  {
-    imageLink: `/images/STEM Leage_phone.png`,
-  },
-  {
-    imageLink: `/images/STEM Leage_phone.png`,
-  },
-  {
-    imageLink: `/images/STEM Leage_phone.png`,
   },
 ];

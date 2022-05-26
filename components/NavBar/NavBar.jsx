@@ -6,10 +6,24 @@ import { useWindowSize } from "./useWindowSize";
 export const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
   const { width, height } = useWindowSize();
+  const mobileMenu = useRef();
+
+  const OpenMenu = () => {
+    if (isActive) {
+      mobileMenu.current.style.transform = `translateX:(0)`;
+      console.log("Moved");
+    } else {
+      mobileMenu.current.style.transform = `translateX:(100vw)`;
+    }
+  };
+  useEffect(() => {
+    console.log("Added");
+  }, []);
 
   return (
-    <nav className="nav-section-container w-full bg-white-900 border-gray-200 px-10 py-2.5 dark:bg-gray-800 fixed top-0 z-1000 ">
-      <div className="container flex flex-wrap justify-between items-center max-w-[1200px] mx-auto ">
+    <nav className="nav-section-container w-full border-gray-200 fixed top-0 z-1000 t ">
+      <div className="nav-section-blur"></div>
+      <div className="container flex flex-wrap justify-between items-center max-w-[1200px] mx-auto px-10 py-2.5 ">
         <Link href="https://www.clong.pro">
           <a className="flex items-center">
             <img
@@ -27,6 +41,7 @@ export const NavBar = () => {
           type="button"
           onClick={() => {
             setIsActive(!isActive);
+            OpenMenu();
             console.log("isActive: ", isActive);
           }}
           className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -34,8 +49,16 @@ export const NavBar = () => {
           open menu
         </button>
 
-        {(isActive || width > 768) && (
-          <div className="nav-menu w-full md:block md:w-auto" id="mobile-menu">
+        {
+          // {(isActive || width > 768) && (
+          <div
+            ref={mobileMenu}
+            className={clsx(
+              "nav-menu w-full md:block md:w-auto",
+              " bg-white-900 h-screen absolute top-0 -z-1 "
+            )} //added by me
+            id="mobile-menu"
+          >
             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
               <li>
                 <Link
@@ -63,7 +86,7 @@ export const NavBar = () => {
               </li>
             </ul>
           </div>
-        )}
+        }
       </div>
     </nav>
   );

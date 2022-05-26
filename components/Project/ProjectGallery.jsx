@@ -34,6 +34,7 @@ const images = [
     category: "Shooting / Adv.Campaing",
   },
 ];
+
 function GalleryItem2({
   src,
   category,
@@ -134,12 +135,9 @@ export function ProjectGallery({ src, index, columnOffset }) {
       className="w-full h-[300vh] "
       id="ProjectSection"
     >
-      <div
-        className="py-10 px-10 items-center bg-white sticky  top-10"
-        id="projectGalSticky_cont"
-      >
+      <div className="py-10 bg-white sticky top-10" id="projectGalSticky_cont">
         <h3 className="hidden">selected-Project</h3>
-        <p className="text-[96px] font-bold text-[#1d1d1f] ">Project</p>
+        <p className="text-[72px] font-bold text-[#1d1d1f] ">Project</p>
         <p className="text-[48px] font-medium text-[#1d1d1f] ">
           <span>COOL</span> project
         </p>

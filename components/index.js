@@ -10,3 +10,6 @@ export * from "./Fanfare";
 export * from "./Footer";
 export * from "./Card";
 export * from "./Works";
+export * from "./SmoothScroll";
+export * from "./Playground";
+export * from "./Testimonials";

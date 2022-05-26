@@ -97,7 +97,7 @@ export const Works = () => {
       </div> */}
 
       {/*Design UIl  */}
-      <div className="UI Design bg-[#000000]">
+      {/* <div className="UI Design bg-[#000000]">
         <div className="p-5">
           <h3 className="hidden"> Design ui</h3>
           <motion.p
@@ -130,7 +130,7 @@ export const Works = () => {
         <div className="canvas-element">
           <div className="bg-gray-700 h-[70vh]"></div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
