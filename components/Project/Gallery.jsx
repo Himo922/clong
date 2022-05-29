@@ -40,8 +40,7 @@ export function Gallery() {
       className="section-wrapper gallery-wrap max-w-[1600px] w-full mt-10 bg-[#fbfbfd] md:mt-15 py-5"
     >
       <p className="text-[96px] font-bold text-[#1d1d1f] mb-10 mt-20">
-        {" "}
-        Selected Project{" "}
+        Selected Project
       </p>
       <div className="gallery-container mx-auto w-full " ref={ref}>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 w-full px-5 mx-auto ">

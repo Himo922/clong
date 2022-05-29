@@ -3,6 +3,7 @@ import { Layout } from "../components";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "next-themes";
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -10,7 +11,9 @@ export default function MyApp({ Component, pageProps }) {
       <AnimateSharedLayout type="crossfade">
         <Layout>
           <Toaster />
-          <Component {...pageProps} />
+          <ParallaxProvider>
+            <Component {...pageProps} />
+          </ParallaxProvider>
         </Layout>
       </AnimateSharedLayout>
     </ThemeProvider>

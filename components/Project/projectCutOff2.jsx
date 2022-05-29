@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useParallax } from "react-scroll-parallax";
 import clsx from "clsx";
 import { useInView } from "react-intersection-observer";
 import { useWindowSize } from "../../hooks/useWindowSize";
@@ -80,46 +81,61 @@ export const ProjectCutOff2 = () => {
     return () => window.removeEventListener("scroll", scrollInProgress);
   }, [inView]);
 
+  const { ref: parllref } = useParallax({
+    speed: [10],
+    translateY: [-10, 0],
+    scale: [0.9, 1],
+    opacity: [0.9, 1],
+    // onProgressChange: (percentage) => {
+    //   setPercentages(percentage);
+    // },
+  });
+
   return (
     <div ref={ref}>
-      {width <= 1200 && (
-        <div>
-          <img
-            src="/images/project-grid-full.png/"
-            alt="projects-image"
-            className="h-[400px] w-auto object-cover"
-          ></img>
-        </div>
-      )}
+      <div ref={parllref}>
+        {width <= 1200 && (
+          <div>
+            <img
+              src="/images/project-grid-full.png/"
+              alt="projects-image"
+              className="h-[400px] w-auto object-cover"
+            ></img>
+          </div>
+        )}
 
-      {width > 1200 && (
-        <div
-          className="w-screen  h-[600px] h-[200vh]  relative -mb-5"
-          ref={stickyContaier}
-        >
-          <div className=" sticky top-[10%] h-[80vh] w-screen" ref={bannerRef}>
-            <div className="project-grid-clipping-container overflow-hidden h-[80vh] ">
-              <div className="mx-auto mb-10 p-0" id="pco-row-1">
-                <img
-                  id="img-pco-row-1"
-                  src="/images/project-grid-1.png/"
-                  alt="scrollinmg image"
-                  data-direction="left"
-                  className=" pco-scroll object-cover"
-                ></img>
-              </div>
+        {width > 1200 && (
+          <div
+            className="w-screen  h-[600px] h-[200vh]  relative -mb-5"
+            ref={stickyContaier}
+          >
+            <div
+              className=" sticky top-[10%] h-[80vh] w-screen"
+              ref={bannerRef}
+            >
+              <div className="project-grid-clipping-container overflow-hidden h-[80vh] ">
+                <div className="mx-auto mb-10 p-0" id="pco-row-1">
+                  <img
+                    id="img-pco-row-1"
+                    src="/images/project-grid-1.png/"
+                    alt="scrollinmg image"
+                    data-direction="left"
+                    className=" pco-scroll object-cover"
+                  ></img>
+                </div>
 
-              <div className=" mx-auto m-0 p-0 " id="pco-row-2">
-                <img
-                  src="/images/project-grid-2.png/"
-                  alt="scrollinmg image-2"
-                  className="pco-scroll h-[40vh] object-none"
-                ></img>
+                <div className=" mx-auto m-0 p-0 " id="pco-row-2">
+                  <img
+                    src="/images/project-grid-2.png/"
+                    alt="scrollinmg image-2"
+                    className="pco-scroll h-[40vh] object-none"
+                  ></img>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
+import { useParallax } from "react-scroll-parallax";
+
 import useDimensions from "../../hooks/useDimensions";
 
 var agents = [];
@@ -100,9 +102,20 @@ export const HeroPendulum = ({ sketchReff, c_width, c_height }) => {
     }
   };
 
+  const [entered, setEntered] = useState(false);
+
+  const { ref } = useParallax({
+    easing: "easeOutQuad",
+    translateY: [0, 1000],
+    opacity: [0, 1],
+    scale: [0.2, 1],
+  });
+
   return (
     <>
-      <Sketch setup={setup} draw={draw} ref={canvasRef} />
+      <div ref={ref}>
+        <Sketch setup={setup} draw={draw} ref={canvasRef} />
+      </div>
     </>
   );
 };

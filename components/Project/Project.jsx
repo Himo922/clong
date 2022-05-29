@@ -1,26 +1,82 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { animations, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Section } from "../Section";
 import { Container } from "../Container";
 import { Project_Item } from "./Project_Item";
 import { data } from "../../src/data";
-import { Gallery } from "./Gallery";
+import { ProjectGallery } from "./ProjectGallery";
 import clsx from "clsx";
 import gsap from "gsap";
 import { ProjectCutOff2 } from "./projectCutOff2";
-import { ProjectGallery } from "./ProjectGallery";
+import { SelectedProject } from "../SelectedProject";
+import { useParallax } from "react-scroll-parallax";
+import { SkillList } from "../Skills/SkillList";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 export const Project = ({ className, styles }) => {
+  const [percentages, setPercentages] = useState(0);
   const { ref, inView } = useInView();
-  // const boxRef = useRef();
+  const { width, height } = useWindowSize();
+
+  const { ref: parllref } = useParallax({
+    speed: [200],
+    translateY: [0, 500],
+    scale: [0.9, 1],
+    onProgressChange: (percentage) => {
+      setPercentages(percentage);
+
+      // console.log("percentage", percentage);
+    },
+  });
+
   return (
     <>
-      <div ref={ref} id="project">
-        <ProjectGallery />
+      <ProjectCutOff2 />
 
-        <ProjectCutOff2 />
+      <div ref={ref} id="project" className="mt-20 py-10">
+        <SelectedProject />
       </div>
+
+      <div className="w-full h-[500px] relative overflow-hidden">
+        <div className="relative" ref={parllref}></div>
+
+        <div
+          style={{
+            position: "absolute",
+            background: `rgba(0, 0, 0, ${percentages * 5})`,
+            left: "50%",
+            top: "60%",
+            borderRadius: "50%",
+            transform: "translate(-50%,0%)",
+            easing: "easeOut",
+            width: percentages * width,
+            height: percentages * width,
+          }}
+        ></div>
+      </div>
+
+      <SkillList
+        title={`Record product demos`}
+        context={` Recording is always just a click away. Snap something quick or use a
+        million takes. Aperture is ready for antything.`}
+        image={`/images/screen.png`}
+        ido={"Record product demos"}
+      />
+
+      <SkillList
+        title={`Customize UI / UX`}
+        context={`With our built in editing tools and filters you’ll make any video your own. Add your own identity with a few clicks.`}
+        image={`/images/screen.png`}
+        ido={"cCustomize UI / UX"}
+      />
+
+      <SkillList
+        title={`Customize UI / UX`}
+        context={`With our built in editing tools and filters you’ll make any video your own. Add your own identity with a few clicks.`}
+        image={`/images/screen.png`}
+        ido={"cCustomize UI / UX"}
+      />
     </>
   );
 };

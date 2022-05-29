@@ -4,7 +4,6 @@ import clsx from "clsx";
 import _ from "lodash";
 import { useWindowSize } from "../../hooks/useWindowSize";
 
-import throttle from "lodash.throttle";
 // import ScrollTrigger from "gsap/ScrollTrigger";
 // import useOnScreen from "../../hooks/useOnScreen";
 

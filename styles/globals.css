@@ -11,6 +11,11 @@ body {
   scroll-behavior: smooth;
 }
 
+.outlineText {
+  color: white;
+  font-weight: 700;
+  -webkit-text-stroke: 2px black;
+}
 .parent {
   top: 0;
   left: 0;
@@ -48,7 +53,17 @@ a {
 .nav-menu {
   z-index: -1;
   left: 0;
-  transform: translateX(100vw);
+}
+
+@media only screen and (min-width: 800px) {
+  .nav-menu {
+    z-index: 1;
+    transform: translateY(0%);
+    background-color: transparent;
+    top: 10;
+    height: 60px;
+    /* display: block !important; */
+  }
 }
 
 .hero-greeting {
@@ -57,7 +72,7 @@ a {
 }
 
 section {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: auto;
 }
 
@@ -148,7 +163,7 @@ section {
 
   line-height: 6vw;
   /* color: transparent; */
-  color: black;
+  /* color: black; */
   font-weight: 700;
   font-size: 8vw;
 }

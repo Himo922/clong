@@ -13,3 +13,5 @@ export * from "./Works";
 export * from "./SmoothScroll";
 export * from "./Playground";
 export * from "./Testimonials";
+export * from "./ParallaxTest";
+export * from "./SelectedProject";

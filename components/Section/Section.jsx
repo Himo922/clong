@@ -8,8 +8,7 @@ import { SectionHeader } from "./SectionHeader";
 export const Section = ({
   title,
   description,
-  sectionClass,
-  headerClass,
+
   children,
   color,
   themeProps,
@@ -33,12 +32,8 @@ export const Section = ({
   }, []);
 
   return (
-    <section ref={ref} className={clsx("py-[100px]", sectionClass)}>
-      <SectionHeader
-        title={title}
-        headerClass={headerClass}
-        description={description}
-      />
+    <section ref={ref} className={clsx("py-[100px]")}>
+      <SectionHeader title={title} description={description} />
 
       {children}
     </section>
