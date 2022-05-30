@@ -32,51 +32,52 @@ export const Project = ({ className, styles }) => {
 
   return (
     <>
-      <ProjectCutOff2 />
+      {/* <ProjectCutOff2 /> */}
+      <Section title="proejct" navIndex="project">
+        <div ref={ref} id="project" className="mt-20 py-10">
+          <SelectedProject />
+        </div>
 
-      <div ref={ref} id="project" className="mt-20 py-10">
-        <SelectedProject />
-      </div>
+        <div className="w-full h-[500px] relative overflow-hidden">
+          <div className="relative" ref={parllref}></div>
 
-      <div className="w-full h-[500px] relative overflow-hidden">
-        <div className="relative" ref={parllref}></div>
+          <div
+            style={{
+              position: "absolute",
+              background: `rgba(0, 0, 0, ${percentages * 5})`,
+              left: "50%",
+              top: "60%",
+              borderRadius: "50%",
+              transform: "translate(-50%,0%)",
+              easing: "easeOut",
+              width: percentages * width * 2,
+              height: percentages * width * 2,
+            }}
+          ></div>
+        </div>
 
-        <div
-          style={{
-            position: "absolute",
-            background: `rgba(0, 0, 0, ${percentages * 5})`,
-            left: "50%",
-            top: "60%",
-            borderRadius: "50%",
-            transform: "translate(-50%,0%)",
-            easing: "easeOut",
-            width: percentages * width * 2,
-            height: percentages * width * 2,
-          }}
-        ></div>
-      </div>
-
-      <SkillList
-        title={`Record product demos`}
-        context={` Recording is always just a click away. Snap something quick or use a
+        <SkillList
+          title={`Record product demos`}
+          context={` Recording is always just a click away. Snap something quick or use a
         million takes. Aperture is ready for antything.`}
-        image={`/images/screen.png`}
-        ido={"Record product demos"}
-      />
+          image={`/images/screen.png`}
+          ido={"Record product demos"}
+        />
 
-      <SkillList
-        title={`Customize UI / UX`}
-        context={`With our built in editing tools and filters you’ll make any video your own. Add your own identity with a few clicks.`}
-        image={`/images/screen.png`}
-        ido={"cCustomize UI / UX"}
-      />
+        <SkillList
+          title={`Customize UI / UX`}
+          context={`With our built in editing tools and filters you’ll make any video your own. Add your own identity with a few clicks.`}
+          image={`/images/screen.png`}
+          ido={"cCustomize UI / UX"}
+        />
 
-      <SkillList
-        title={`Customize UI / UX`}
-        context={`With our built in editing tools and filters you’ll make any video your own. Add your own identity with a few clicks.`}
-        image={`/images/screen.png`}
-        ido={"cCustomize UI / UX"}
-      />
+        <SkillList
+          title={`Customize UI / UX`}
+          context={`With our built in editing tools and filters you’ll make any video your own. Add your own identity with a few clicks.`}
+          image={`/images/screen.png`}
+          ido={"cCustomize UI / UX"}
+        />
+      </Section>
     </>
   );
 };

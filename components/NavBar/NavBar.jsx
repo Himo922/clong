@@ -2,26 +2,46 @@ import React, { useRef, useCallback, useState, useEffect } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import { useWindowSize } from "./useWindowSize";
+import { motion, useCycle } from "framer-motion";
+import { Navigation } from "./Navigation";
+import { MenuToggle } from "./MenuToggle";
+
+const sidebar = {
+  open: () => ({
+    x: "100vw",
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      x: { stiffness: 1000, velocity: -100 },
+      restDelta: 2,
+    },
+  }),
+  closed: {
+    x: "0",
+    transition: {
+      delay: 0.2,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};
 
 export const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
   const { width, height } = useWindowSize();
   const mobileMenu = useRef();
 
-  const MenuStatus = () => {
-    if (isActive) {
-      console.log("Moved");
-      return `translate-x-0`;
-    }
-    return "translate-x-[120vw]";
-  };
-
-  useEffect(() => {
-    console.log("Added");
-  }, []);
+  const [isOpen, toggleOpen] = useCycle(false, true);
+  const containerRef = useRef(null);
 
   return (
-    <nav className="nav-section-container w-full border-gray-200 fixed top-0 z-1000 ">
+    <motion.nav
+      className="nav-section-container w-full border-gray-200 fixed top-0 z-1000 "
+      initial={false}
+      animate={isOpen || width > 768 ? "closed" : "open"}
+      custom={height}
+    >
       <div className="nav-section-blur"></div>
       <div className="container flex flex-wrap justify-between items-center max-w-[1500px] mx-auto px-10 py-2.5 ">
         <Link href="https://www.clong.pro">
@@ -37,67 +57,19 @@ export const NavBar = () => {
           </a>
         </Link>
 
-        <button
-          type="button"
-          onClick={() => {
-            setIsActive(!isActive);
-            console.log(isActive);
-          }}
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-        >
-          Menu
-        </button>
-
-        {/*         
-           {(isActive || width > 768) && ( */}
-        <div
+        <motion.div
           ref={mobileMenu}
+          variants={sidebar}
           className={clsx(
             "nav-menu w-full md:w-auto px-5",
-            " bg-white-900 h-screen top-0 -z-1 absolute md:relative ease-in-out",
-            MenuStatus()
+            " bg-white-900 h-screen top-0 -z-1 absolute md:relative ease-in-out"
           )} //added by me
           id="mobile-menu"
         >
-          <ul
-            className={clsx(
-              "flex flex-col h-full mt-[60vh]",
-              "md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:mt-[30px]"
-            )}
-          >
-            <li
-              className={clsx(
-                "block py-2 pr-4 pl-3 text-white rounded text-4xl font-bold",
-                " md:bg-transparent md:p-0 md:text-sm  md:font-medium dark:text-white"
-              )}
-            >
-              <Link href="/#about" className="">
-                <a>About</a>
-              </Link>
-            </li>
-            <li
-              className={clsx(
-                "block py-2 pr-4 pl-3 text-white rounded text-4xl font-bold",
-                " md:bg-transparent md:p-0 md:text-sm  md:font-medium dark:text-white"
-              )}
-            >
-              <Link href="/project">
-                <a>Project</a>
-              </Link>
-            </li>
-            <li
-              className={clsx(
-                "block py-2 pr-4 pl-3 text-white rounded text-4xl font-bold",
-                " md:bg-transparent md:p-0 md:text-sm  md:font-medium dark:text-white"
-              )}
-            >
-              <Link href="/#contact">
-                <a>Contact</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
+          <Navigation />
+        </motion.div>
+        {width < 768 && <MenuToggle toggle={() => toggleOpen()} />}
       </div>
-    </nav>
+    </motion.nav>
   );
 };

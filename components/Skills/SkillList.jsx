@@ -23,26 +23,30 @@ export const SkillList = ({ title, context, image, ido }) => {
   titleDivider(title);
 
   return (
-    <div className="bg-black-900 mt-[00px] w-full h-[80vh] relative">
+    <div className="bg-black-900 mt-[00px] w-full h-[80vh] relative py-8">
       <div ref={parllref}>
         <h3 className="hidden">{ido} </h3>
-        <div className="">
-          <p className="text-white-900 text-[64px] leading-[4rem] font-bold py-8 px-5 border-0 ">
-            {/* {titleDivider(title).map((text, index) => (
+        <div className="flex flex-col md:flex-row mx-auto px-10 max-w-[1200px] gap-5">
+          <div className="flex flex-col">
+            <div className="">
+              <p className="text-white-900 text-[64px] leading-[4rem] font-bold py-8 px-5 border-0 md:text-[96px]">
+                {/* {titleDivider(title).map((text, index) => (
             <titleText key={`${text}_${index}`} title={text}></titleText>
           ))} */}
-            {title}
-          </p>
-        </div>
+                {title}
+              </p>
+            </div>
 
-        <div>
-          <p className="text-white-900 text-[15px] leading-[1.5rem] font-bold py-8 px-5 border-0 ">
-            {context}
-          </p>
-        </div>
+            <div>
+              <p className="text-white-900 text-[15px] leading-[1.5rem] font-bold py-8 px-5 border-0 md:text-2xl">
+                {context}
+              </p>
+            </div>
+          </div>
 
-        <div className="max-w-[1200px] px-5">
-          <img className="w-full" src={image} alt="project1"></img>
+          <div className="max-w-[1200px] px-5">
+            <img className="w-full" src={image} alt="project1"></img>
+          </div>
         </div>
       </div>
     </div>

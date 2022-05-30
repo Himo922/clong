@@ -96,85 +96,87 @@ export const About = ({ className, styles }) => {
   });
   return (
     <>
-      <AboutCutOff />
+      <Section title="About CLONG" navIndex="about">
+        <AboutCutOff />
 
-      <div
-        id="about"
-        className={clsx(
-          "bg-white-800 w-full m-0 min-h-[600px] p-4 md:min-h-[60vh] z-5 md:px-8",
-          className
-        )}
-        ref={parllref}
-        style={styles}
-      >
-        <div title="" color="text-black-900" theme="light" description="">
-          <motion.p
-            variants={titleVariants}
-            initial="hidden"
-            animate={percentages > 0.1 ? "visible" : "exit"}
-            exit="exit"
-            className="text-black-900 text-5xl font-bold lg:text-[64px]"
-          >
-            WHO AM I?
-          </motion.p>
+        <div
+          id="about"
+          className={clsx(
+            "bg-white-800 w-full m-0 min-h-[600px] p-4 md:min-h-[60vh] z-5 md:px-8 max-w-[1500px] mx-auto ",
+            className
+          )}
+          ref={parllref}
+          style={styles}
+        >
+          <div title="" color="text-black-900" theme="light" description="">
+            <motion.p
+              variants={titleVariants}
+              initial="hidden"
+              animate={percentages > 0.1 ? "visible" : "exit"}
+              exit="exit"
+              className="text-black-900 text-5xl font-bold lg:text-[64px]"
+            >
+              WHO AM I?
+            </motion.p>
 
-          <motion.p
-            className="text-black-700 italic"
-            variants={titleVariants}
-            initial="hidden"
-            animate={percentages > 0.2 ? "visible" : "exit"}
-            exit="exit"
-          >
-            World grow evolve every day, learn never stop.
-          </motion.p>
-          <div
-            className={clsx(
-              "flex flex-col m-0 p-0 my-15 z-10 items-center ",
-              "md:mx-8 md:px-10 md:px-25 md:flex-row"
-            )}
-          >
-            <div className="md:w-1/2 lg:w-1/4"></div>
-            <div className="md:w-1/2 lg:w-3/4">
-              <motion.h4
-                custom={1}
-                variants={variants}
-                initial="hidden"
-                animate={percentages > 0.3 ? "visible" : "exit"}
-                exit="exit"
-                className="py-3 text-base max-w-[95%] md:text-2xl dark:text-white-700 text-black-700 md:mb-12"
-              >
-                Hi, I am CLong Lam. A Web Developer and Media Designer.
-                Currently bassed in Vancourver. Before this I worked in Hong
-                Kong for 4-Year.
-              </motion.h4>
+            <motion.p
+              className="text-black-700 italic"
+              variants={titleVariants}
+              initial="hidden"
+              animate={percentages > 0.2 ? "visible" : "exit"}
+              exit="exit"
+            >
+              World grow evolve every day, learn never stop.
+            </motion.p>
+            <div
+              className={clsx(
+                "flex flex-col m-0 p-0 my-15 z-10 items-center ",
+                "md:mx-8 md:px-10 md:px-25 md:flex-row"
+              )}
+            >
+              <div className="md:w-1/2 lg:w-1/4"></div>
+              <div className="md:w-1/2 lg:w-3/4">
+                <motion.h4
+                  custom={1}
+                  variants={variants}
+                  initial="hidden"
+                  animate={percentages > 0.3 ? "visible" : "exit"}
+                  exit="exit"
+                  className="py-3 text-base max-w-[95%] md:text-2xl dark:text-white-700 text-black-700 md:mb-12"
+                >
+                  Hi, I am CLong Lam. A Web Developer and Media Designer.
+                  Currently bassed in Vancourver. Before this I worked in Hong
+                  Kong for 4-Year.
+                </motion.h4>
 
-              <motion.h4
-                custom={1}
-                variants={variants}
-                initial="hidden"
-                animate={percentages > 0.35 ? "visible" : "exit"}
-                exit="exit"
-                className="py-3 text-base max-w-[95%] md:text-2xl dark:text-white-700 text-black-700 md:mb-4"
-              >
-                I love to explore new things, I did project on different media,
-                Rpi, p5js etc. If you wanna know more about me, scroll down and
-                see what I did. Cheers.
-              </motion.h4>
+                <motion.h4
+                  custom={1}
+                  variants={variants}
+                  initial="hidden"
+                  animate={percentages > 0.35 ? "visible" : "exit"}
+                  exit="exit"
+                  className="py-3 text-base max-w-[95%] md:text-2xl dark:text-white-700 text-black-700 md:mb-4"
+                >
+                  I love to explore new things, I did project on different
+                  media, Rpi, p5js etc. If you wanna know more about me, scroll
+                  down and see what I did. Cheers.
+                </motion.h4>
 
-              <motion.h4
-                custom={2}
-                variants={variants}
-                initial="hidden"
-                animate={percentages > 0.4 ? "visible" : "exit"}
-                exit="exit"
-                className="mt-5 text-base max-w-[95%] md:text-2xl dark:text-white-700 text-black-700 "
-              >
-                {`Know more ->`}
-              </motion.h4>
+                <motion.h4
+                  custom={2}
+                  variants={variants}
+                  initial="hidden"
+                  animate={percentages > 0.4 ? "visible" : "exit"}
+                  exit="exit"
+                  className="mt-5 text-base max-w-[95%] md:text-2xl dark:text-white-700 text-black-700 "
+                >
+                  {`Know more ->`}
+                </motion.h4>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Section>
     </>
   );
 };

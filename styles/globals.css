@@ -71,11 +71,6 @@ a {
   bottom: 20%;
 }
 
-section {
-  max-width: 1500px;
-  margin: auto;
-}
-
 .zoom-out-container {
   position: sticky;
   position: -webkit-sticky;
@@ -368,4 +363,27 @@ section {
   transform: scale(0.7), translateX(-100%);
   transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
   filter: grayscale(100%) sepia(20%) brightness(80%);
+}
+
+.menuToggleButton {
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.Navunderline {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: black;
 }

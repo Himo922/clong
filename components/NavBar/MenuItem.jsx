@@ -1,46 +1,74 @@
-import * as React from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useCallback, useState, useEffect } from "react";
 import Link from "next/link";
+import clsx from "clsx";
+import { useWindowSize } from "./useWindowSize";
+import { motion, useCycle } from "framer-motion";
+import { useStateContext } from "../../context/StateContext";
 
 const variants = {
-  open: {
+  closed: {
     y: 0,
     opacity: 1,
-    zindex: 10,
     transition: {
       y: { stiffness: 1000, velocity: -100 },
     },
   },
-  closed: {
+  open: {
     y: 50,
     opacity: 0,
-    zindex: 0,
     transition: {
       y: { stiffness: 1000 },
     },
   },
 };
 
-export const MenuItem = ({ item }) => {
-  // const style = { border: `2px solid ${colors[i]}` };
+export const MenuItem = () => {
+  const { currentSection, setCurrentSection } = useStateContext();
   return (
-    <motion.li
-      className="flex z-10 items-center mb-20 py-2 pl-3 text-orange-500 border-b 
-      md:items-center border-orange-500  text-lg
-      md:hover:bg-transparent md:hover:text-blue-700 
-      md:border-0 md:p-0 md:py-0 md:my-0 md:text-sm 
-      dark:hover:text-white dark:border-gray-700 dark:text-orange-700
-      md:dark:hover:bg-transparent md:dark:hover:text-white "
-      variants={variants}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <Link href={`#${item}`} className="w-[200px] h-[20px] flex-1">
-        <a>{item}</a>
-      </Link>
+    <>
+      <motion.li
+        variants={variants}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className={clsx(
+          "block py-2 pr-4 pl-3 text-white rounded text-[64px] font-bold",
+          " md:bg-transparent md:p-0 md:text-sm  md:font-medium dark:text-white"
+        )}
+      >
+        <Link href="/#about" className="">
+          <a>About</a>
+        </Link>
+        {/* {"about" === currentSection ? (
+          <motion.div className="underline" layoutId="underline" />
+        ) : null} */}
+      </motion.li>
+      <motion.li
+        variants={variants}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className={clsx(
+          "block py-2 pr-4 pl-3 text-white rounded text-[64px] font-bold",
+          " md:bg-transparent md:p-0 md:text-sm  md:font-medium dark:text-white"
+        )}
+      >
+        <Link href="/project">
+          <a>Project</a>
+        </Link>
+      </motion.li>
 
-      {/* <div className={styles.icon_placeholder} style={style} />
-      <div className={styles.text_placeholder} style={style} /> */}
-    </motion.li>
+      <motion.li
+        variants={variants}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className={clsx(
+          "block py-2 pr-4 pl-3 text-white rounded text-[64px] font-bold",
+          " md:bg-transparent md:p-0 md:text-sm  md:font-medium dark:text-white"
+        )}
+      >
+        <Link href="/#contact">
+          <a>Contact</a>
+        </Link>
+      </motion.li>
+    </>
   );
 };

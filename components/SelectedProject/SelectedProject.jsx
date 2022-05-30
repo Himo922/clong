@@ -3,14 +3,14 @@ import Link from "next/link";
 import clsx from "clsx";
 
 export const SelectedProject = () => {
-  useEffect(() => {
-    onmousemove = function (e) {
-      const infoCircle = document.querySelector("#motionCircle");
-      infoCircle.style.left = `${e.clientX}px`;
-      infoCircle.style.top = `${e.clientY}px`;
-      console.log("mouse location:", e.clientX, e.clientY);
-    };
-  }, []);
+  // useEffect(() => {
+  //   onmousemove = function (e) {
+  //     const infoCircle = document.querySelector("#motionCircle");
+  //     infoCircle.style.left = `${e.clientX}px`;
+  //     infoCircle.style.top = `${e.clientY}px`;
+  //     console.log("mouse location:", e.clientX, e.clientY);
+  //   };
+  // }, []);
 
   return (
     <div className="max-w-[1500px] p-5 relative w-full m-auto">
@@ -40,7 +40,7 @@ export const SelectedProject = () => {
         )}
       >
         <button>
-          <Link href="/project" passHref>
+          <Link href="/project/stem" passHref>
             <p className="text-center absolute top-1/2 left-1/4">{`Other Project ->`}</p>
           </Link>
         </button>

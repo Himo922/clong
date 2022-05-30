@@ -4,36 +4,33 @@ import { useInView } from "react-intersection-observer";
 // import { useTheme } from "next-themes";
 import clsx from "clsx";
 import { SectionHeader } from "./SectionHeader";
+import { useStateContext } from "../../context/StateContext";
 
 export const Section = ({
   title,
   description,
-
   children,
   color,
+  navIndex,
   themeProps,
 }) => {
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({
+    threshold: 0,
+    rootMargin: " -60px",
+  });
   // const { theme, setTheme } = useTheme();
-
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    // const position = this.myRef.current.scrollTop;
-    setScrollPosition(position);
-  };
+  const { currentSection, setCurrentSection } = useStateContext();
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+    if (inView) {
+      setCurrentSection(navIndex);
+      console.log("currentSection", currentSection);
+    }
+  });
   return (
-    <section ref={ref} className={clsx("py-[100px]")}>
-      <SectionHeader title={title} description={description} />
+    <section ref={ref}>
+      <h3 className="hidden">{title}</h3>
+      {/* <SectionHeader title={title} description={description} /> */}
 
       {children}
     </section>
