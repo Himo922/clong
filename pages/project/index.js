@@ -1,46 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { Card } from "../../components/Card";
 import clsx from "clsx";
-import { data } from "../../src/data";
+import { allProject } from "../../src/data";
 import { BsGrid1X2Fill, BsListStars } from "react-icons/bs";
 
 const ProjectList = () => {
+  const [grid, setGrid] = useState(true);
+
+  const [list, setList] = useState(false);
+
   return (
-    <div className=" ">
-      <div className="py-3">
-        <img
-          src="/images/project-grid-full.png/"
-          alt="projects-image"
-          className="h-[400px] w-full object-cover"
-        ></img>
-      </div>
+    <div className="bg-white-900 mt-10 ">
+      <div className="py-3"></div>
 
       <div className="container mx-auto min-h-screen max-w-[1200px] width-full bg-white-800">
-        <div className="py-8">
-          <p className="text-4xl font-bold">Project</p>
-          <h2 className="text-2xl font-bold">
+        <div className="py-8 px-10">
+          <p className=" mt-8 text-4xl font-bold">Project</p>
+          <p className="text-xl font-medium">
             Creating digital experiences our clients fall in love with
-          </h2>
+          </p>
         </div>
 
         <div className="project-filter w-full flex justify-end py-5 px-10 gap-3 bg-white-900">
-          {/* <BsGrid1X2Fill />
-          <BsListStars /> */}
-        </div>
+          <button
+            onClick={() => {
+              setList(false);
+              setGrid(true);
+            }}
+          >
+            <BsGrid1X2Fill />
+          </button>
 
-        <div className="project-list grid grid-cols-2 gap-y-8 gap-x-2 py-5 px-10">
-          {data.map((project, index) => (
-            <Card
-              key={clsx(project.title, index)}
-              technologies={project.technologies}
-              title={project.title}
-              desc={project.description}
-              href={project.githubLink}
-              imageSrc={project.imageLink}
-              index={index}
-            />
-          ))}
+          <button
+            onClick={() => {
+              setList(true);
+              setGrid(false);
+            }}
+          >
+            <BsListStars />
+          </button>
         </div>
+        <hr />
+        {grid && (
+          <div className="project-list grid grid-cols-2 gap-y-8 gap-x-2 py-5 px-10">
+            {allProject.map((project, index) => (
+              <Card
+                key={clsx(project.title, index)}
+                technologies={project.technologies}
+                title={project.title}
+                // desc={project.description}
+                href={project.githubLink}
+                imageSrc={project.imageLink}
+                index={index}
+              />
+            ))}
+          </div>
+        )}
+
+        {list && (
+          <div className="project-list flex flex-col  py-5 px-10">
+            {allProject.map((project, index) => (
+              <div
+                key={clsx(project.title, index)}
+                className="boder-gray flex flex- justify-between px-8 py-5 border-b-2 border-slate-100"
+              >
+                <div>{project.title}</div>
+
+                <div>{project.technologies}</div>
+              </div>
+
+              // <Card
+              //   key={clsx(project.title, index)}
+              //   technologies={project.technologies}
+              //   title={project.title}
+              //   // desc={project.description}
+              //   href={project.githubLink}
+              //   imageSrc={project.imageLink}
+              //   index={index}
+              // />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

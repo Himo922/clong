@@ -29,17 +29,17 @@ export const Hero = ({ className, styles, width, height }) => {
     easing: "easeOutQuad",
     translateY: [0, 0],
     opacity: [0.8, 1],
-    scale: [0.8, 1.1],
+    scale: [0.8, 1],
   });
 
   return (
     <>
       <HeroPendulum c_width={width} c_height={height} />
       <section
-        className="hero-section-container h-screen py-10 w-full px-10"
+        className="hero-section-container h-screen py-10 w-full "
         ref={ref}
       >
-        <div className={clsx("container z-10 pt-20 ", className)}>
+        <div className={clsx("container z-10 pt-20 px-10", className)}>
           <div className="mb-1 md:mb-2 z-10 h-full flex-1 z-10 flex flex-wrap">
             <div className="top-20 w-400">
               <p

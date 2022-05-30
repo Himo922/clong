@@ -67,7 +67,7 @@ export const projectContent = [
   },
 ];
 
-export const projects_grid = [
+export const allProject = [
   {
     title: "STEM_Leage",
     type: "Software Development",

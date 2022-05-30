@@ -53,34 +53,45 @@ export const NavBar = () => {
         <div
           ref={mobileMenu}
           className={clsx(
-            "nav-menu w-full md:w-auto",
+            "nav-menu w-full md:w-auto px-5",
             " bg-white-900 h-screen top-0 -z-1 absolute md:relative ease-in-out",
             MenuStatus()
           )} //added by me
           id="mobile-menu"
         >
-          <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:mt-[30px]">
-            <li>
-              <Link
-                href="/about"
-                className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
-              >
+          <ul
+            className={clsx(
+              "flex flex-col h-full mt-[60vh]",
+              "md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:mt-[30px]"
+            )}
+          >
+            <li
+              className={clsx(
+                "block py-2 pr-4 pl-3 text-white rounded text-4xl font-bold",
+                " md:bg-transparent md:p-0 md:text-sm  md:font-medium dark:text-white"
+              )}
+            >
+              <Link href="/#about" className="">
                 <a>About</a>
               </Link>
             </li>
-            <li>
-              <Link
-                href="/project"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
+            <li
+              className={clsx(
+                "block py-2 pr-4 pl-3 text-white rounded text-4xl font-bold",
+                " md:bg-transparent md:p-0 md:text-sm  md:font-medium dark:text-white"
+              )}
+            >
+              <Link href="/project">
                 <a>Project</a>
               </Link>
             </li>
-            <li>
-              <Link
-                href="/#contact"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
+            <li
+              className={clsx(
+                "block py-2 pr-4 pl-3 text-white rounded text-4xl font-bold",
+                " md:bg-transparent md:p-0 md:text-sm  md:font-medium dark:text-white"
+              )}
+            >
+              <Link href="/#contact">
                 <a>Contact</a>
               </Link>
             </li>

@@ -34,30 +34,6 @@ export default function Home() {
         <Hero className="w-full" width={width} height={height} />
         <About />
         <Project />
-
-        {/* <SkillList
-          title={`Record product demos`}
-          context={` Recording is always just a click away. Snap something quick or use a
-        million takes. Aperture is ready for antything.`}
-          image={`/images/screen.png`}
-          ido={"Record product demos"}
-        />
-
-        <SkillList
-          title={`Customize UI / UX`}
-          context={`With our built in editing tools and filters you’ll make any video your own. Add your own identity with a few clicks.`}
-          image={`/images/screen.png`}
-          ido={"cCustomize UI / UX"}
-        />
-
-        <SkillList
-          title={`Customize UI / UX`}
-          context={`With our built in editing tools and filters you’ll make any video your own. Add your own identity with a few clicks.`}
-          image={`/images/screen.png`}
-          ido={"cCustomize UI / UX"}
-        /> */}
-        {/* <ProjectGallery /> */}
-
         <Contact className="mx-4 my-8 p-2 px-10 md:px-36 " />
       </div>
     </>

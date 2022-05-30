@@ -113,7 +113,7 @@ export const About = ({ className, styles }) => {
             initial="hidden"
             animate={percentages > 0.1 ? "visible" : "exit"}
             exit="exit"
-            className="text-black-900 text-5xl font-bold md:text-[64px]"
+            className="text-black-900 text-5xl font-bold lg:text-[64px]"
           >
             WHO AM I?
           </motion.p>
@@ -133,7 +133,8 @@ export const About = ({ className, styles }) => {
               "md:mx-8 md:px-10 md:px-25 md:flex-row"
             )}
           >
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 lg:w-1/4"></div>
+            <div className="md:w-1/2 lg:w-3/4">
               <motion.h4
                 custom={1}
                 variants={variants}

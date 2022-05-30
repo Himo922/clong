@@ -50,8 +50,8 @@ export const Project = ({ className, styles }) => {
             borderRadius: "50%",
             transform: "translate(-50%,0%)",
             easing: "easeOut",
-            width: percentages * width,
-            height: percentages * width,
+            width: percentages * width * 2,
+            height: percentages * width * 2,
           }}
         ></div>
       </div>
