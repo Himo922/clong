@@ -248,7 +248,7 @@ export const SelectedProject = () => {
               }}
               whileTap={{ scale: 0.95 }}
               initial="hidden"
-              animate={percentages > 0.4 ? "visible" : "exit"}
+              animate={percentages > 0.3 ? "visible" : "exit"}
               exit="exit"
               className="flex flex-col justify-center  mt-5 bg-white-700 rounded-xl cursor-pointer"
             >
@@ -262,7 +262,7 @@ export const SelectedProject = () => {
                 <motion.p
                   variants={CTAvariants}
                   initial="hidden"
-                  animate={percentages > 0.5 ? "visible" : "exit"}
+                  animate={percentages > 0.35 ? "visible" : "exit"}
                   exit="exit"
                   className=" text-4xl font-bold py-4"
                 >
@@ -272,7 +272,7 @@ export const SelectedProject = () => {
                 <motion.p
                   variants={CTAvariants}
                   initial="hidden"
-                  animate={percentages > 0.55 ? "visible" : "exit"}
+                  animate={percentages > 0.4 ? "visible" : "exit"}
                   exit="exit"
                   className=" text-sm mb-5 md:text-[28px] leading-[1rem] md:py-3"
                 >
@@ -301,7 +301,7 @@ export const SelectedProject = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
                 initial="hidden"
-                animate={percentages > 0.6 ? "visible" : "exit"}
+                animate={percentages > 0.5 ? "visible" : "exit"}
                 exit="exit"
                 id="motionCircle"
                 className={clsx(
