@@ -34,7 +34,7 @@ export const Project = ({ className, styles }) => {
     <>
       {/* <ProjectCutOff2 /> */}
       <Section title="proejct" navIndex="project">
-        <div ref={ref} id="project" className="mt-20 py-10">
+        <div ref={ref} id="project" className="mt-5 md:mt-20 py-5">
           <SelectedProject />
         </div>
 

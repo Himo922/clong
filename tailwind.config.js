@@ -14,9 +14,12 @@ module.exports = {
         darkTheme: "#112135",
         white: {
           900: "#ffffff",
-          700: "#C9C9CB",
-          500: "#A5A6A9",
-          300: "#363B49",
+          700: "#F2F2F7",
+          500: "#E5E5EA",
+          300: "#D1D1D6",
+          200: "#C7C7CC",
+          100: "#AEAEB2",
+          50: "#8E8E93",
         },
         gray: {
           700: "#8E8E8E",

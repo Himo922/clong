@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2811.2 1757">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#New_Gradient_Swatch_5);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-1104.05" y1="953.56" x2="6754.78" y2="2038.74" gradientTransform="translate(247.62 -582.13) rotate(8.02)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c2876a"/>
+      <stop offset="0" stop-color="#b87e75"/>
+      <stop offset=".09" stop-color="#f0b435"/>
+      <stop offset=".16" stop-color="#eb9c26"/>
+      <stop offset=".28" stop-color="#f5cc44"/>
+      <stop offset=".38" stop-color="#f0b435"/>
+      <stop offset=".51" stop-color="#eb9c26"/>
+      <stop offset=".62" stop-color="#f0b435"/>
+      <stop offset=".68" stop-color="#f0b435"/>
+      <stop offset=".77" stop-color="#eb9c26"/>
+      <stop offset=".89" stop-color="#f5cc44"/>
+      <stop offset="1" stop-color="#f5cc44"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_5" data-name="New Gradient Swatch 5" x1="-1262.34" y1="2100.27" x2="6596.62" y2="3185.47" gradientTransform="translate(247.62 -582.13) rotate(8.02)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b87e75"/>
+      <stop offset=".09" stop-color="#b87e75"/>
+      <stop offset=".16" stop-color="#542f2a"/>
+      <stop offset=".28" stop-color="#b87e75"/>
+      <stop offset=".38" stop-color="#b87e75"/>
+      <stop offset=".51" stop-color="#6b3a33"/>
+      <stop offset=".62" stop-color="#b87e75"/>
+      <stop offset=".68" stop-color="#b87e75"/>
+      <stop offset=".77" stop-color="#58261f"/>
+      <stop offset=".89" stop-color="#b87e75"/>
+      <stop offset="1" stop-color="#b87e75"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_3" data-name="Layer 3"/>
+  <g id="Layer_4" data-name="Layer 4"/>
+  <g id="Layer_1" data-name="Layer 1"/>
+  <g id="Layer_2" data-name="Layer 2"/>
+  <g id="Project_Animation" data-name="Project Animation"/>
+  <g id="web"/>
+  <g id="mobile"/>
+  <g id="ipad"/>
+  <g id="Layer_10" data-name="Layer 10"/>
+  <g id="Layer_9" data-name="Layer 9"/>
+  <g id="Layer_12" data-name="Layer 12">
+    <g>
+      <path class="cls-1" d="M440.31,1348.61c.06,.04,.13,.08,.2,.12l145.14,86.95-147.62,321.33h25.68l101.57-221.09,40.51-88.17,367.06,219.9,.25,.15,148.93,89.22h45.42l-179.38-107.46-206.73-447.3,464.2-438.01,87.4,992.78h23.43l-89.2-1013.19,384.56-362.86,122.26,250.65-196.4,571.05s-.03,.09-.05,.14l-190.61,554.21h24.68l176.04-511.83,148.17,511.83h24.3l-156.27-539.8,472.17-31.12-85.42,182.15c-.07,.13-.13,.27-.19,.4l-182.12,388.36h25.78l169.62-361.7,290.33,361.7h29.93l-4.18-5.2,491.44-457.62v-31.89l-506.09,471.26-290.4-361.77,87.9-187.44,708.59-46.7v-23.39l-173.33,11.42,173.33-207.44v-36.4l-205.51,245.96-275.64,18.16,149.94-454.79,331.21,137.79v-25.28l-387.19-161.07-414.95-172.62-.05-.02-123.37-51.32L2629.86,0h-47.6l-702.22,395L2015.89,0h-24.68l-206.49,600.37-118.98-243.92L1491.87,0h-25.97l175.1,358.98-393.9,371.68s-.08,.08-.13,.12l-475.97,449.13-41.44-89.65,420.71-675.77L1408.31,0h-27.49L717.86,1064.9l-246.8-534.02-85.81-185.67,436.33-168.75c.11-.04,.22-.08,.33-.13L1277.82,0h-100.77l-1.47,14.52-347.63,134.45L816.37,0h-23.41l10.75,138.29L642.41,0h-35.86l188.57,161.66-419.69,162.32-71.05-153.74L414.1,0h-27.77l-93.55,145.15L225.7,0h-25.71l80.45,174.08c.04,.1,.09,.19,.13,.29l78.26,169.34,86.96,188.17L0,848.79v28.63l455.76-324,106.26,229.91-123.26,537.13-318.07-190.54c-.13-.08-.27-.16-.4-.24L0,1057.62v27.21l103.07,61.75,21.67,610.43h23.35l-21.17-596.13,313.38,187.74Zm2018.06-666.43l-146.57,444.59-284.41-623.89,430.99,179.29Zm-660.75-47.56l68.39-198.86,65.43,27.22,64.29,26.74,300.19,658.49-201.43,13.27c-.19,0-.38,.02-.57,.04l-488.59,32.2,192.29-559.1Zm-1219.61,183.34l127.72,276.36h0l50.76,109.83c.08,.17,.15,.34,.24,.52l195.76,423.58-345.89-207.21-146.8-87.94,118.21-515.12Z"/>
+      <polygon class="cls-2" points="0 1678.34 76.41 1757 108.94 1757 0 1644.84 0 1678.34"/>
+    </g>
+  </g>
+</svg>
