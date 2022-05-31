@@ -13,11 +13,13 @@ export const SelectedProject = () => {
   // }, []);
 
   return (
-    <div className="max-w-[1500px] p-5 relative w-full m-auto">
+    <div className="max-w-[1500px] p-5 relative w-full m-auto md:px-10 transition-all">
       <h3 className="hidden"> Selected Project </h3>
       <div>
-        <p className="text-4xl font-bold md:text-[96px]">SelectedProject</p>
-        <p className="text-md mb-5 md:text-[32px]">
+        <p className="text-4xl font-bold md:text-[64px] leading-[3rem] md:py-3 ">
+          SelectedProject
+        </p>
+        <p className="text-md mb-5 md:text-[28px] leading-[3rem] md:py-3">
           UI Design | Software Development
         </p>
       </div>
@@ -25,7 +27,7 @@ export const SelectedProject = () => {
       <div className="flex flex-col justify-center">
         <Link href="/project/stem" passHref>
           <img
-            className="w-full"
+            className="w-full px-8 hover:scale-110 transition-all duration-300 cursor-pointer"
             src="/images/selectedProject.png"
             alt="Selected Project"
           ></img>

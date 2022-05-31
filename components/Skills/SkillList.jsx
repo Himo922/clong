@@ -19,9 +19,7 @@ export const SkillList = ({ title, context, image, ido }) => {
       setPercentages(percentage);
     },
   });
-
   titleDivider(title);
-
   return (
     <div className="bg-black-900 mt-[00px] w-full h-[80vh] relative py-8">
       <div ref={parllref}>
@@ -29,16 +27,21 @@ export const SkillList = ({ title, context, image, ido }) => {
         <div className="flex flex-col md:flex-row mx-auto px-10 max-w-[1200px] gap-5">
           <div className="flex flex-col">
             <div className="">
-              <p className="text-white-900 text-[64px] leading-[4rem] font-bold py-8 px-5 border-0 md:text-[96px]">
-                {/* {titleDivider(title).map((text, index) => (
-            <titleText key={`${text}_${index}`} title={text}></titleText>
-          ))} */}
-                {title}
-              </p>
+              {titleDivider(title).map((text, index) => (
+                <p
+                  key={`${title}_${index}`}
+                  className={clsx(
+                    "text-white-900 text-[64px] leading-[4rem] font-bold px-5 border-0 md:text-[96px]",
+                    index == 0 ? "text-violet-700" : "text-white-900"
+                  )}
+                >
+                  {text}
+                </p>
+              ))}
             </div>
 
             <div>
-              <p className="text-white-900 text-[15px] leading-[1.5rem] font-bold py-8 px-5 border-0 md:text-2xl">
+              <p className="text-white-900 text-[15px] leading-[1.5rem] font-bold py-8 px-5 border-0 md:text-2xl text-white-700">
                 {context}
               </p>
             </div>

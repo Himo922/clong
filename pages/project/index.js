@@ -43,7 +43,7 @@ const ProjectList = () => {
         </div>
         <hr />
         {grid && (
-          <div className="project-list grid grid-cols-2 gap-y-8 gap-x-2 py-5 px-10">
+          <div className="project-list grid grid-cols-8 gap-y-8 gap-x-2 py-5 px-10 mx-auto max-w-[1200px]">
             {allProject.map((project, index) => (
               <Card
                 key={clsx(project.title, index)}
@@ -53,6 +53,11 @@ const ProjectList = () => {
                 href={project.githubLink}
                 imageSrc={project.imageLink}
                 index={index}
+                className={`col-span-8 md:col-span-3 ${
+                  index % 2 == 0
+                    ? "col-start-0 md:col-start-2"
+                    : "col-start-0 md:col-start-5"
+                }`}
               />
             ))}
           </div>

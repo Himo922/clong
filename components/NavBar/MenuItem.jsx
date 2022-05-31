@@ -31,7 +31,7 @@ export const MenuItem = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         className={clsx(
-          "block py-2 pr-4 pl-3 text-white rounded text-[64px] font-bold",
+          "block py-2 pr-4 pl-3 text-white rounded text-[48px] font-bold",
           " md:bg-transparent md:p-0 md:text-sm  md:font-medium dark:text-white"
         )}
       >
@@ -47,7 +47,7 @@ export const MenuItem = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         className={clsx(
-          "block py-2 pr-4 pl-3 text-white rounded text-[64px] font-bold",
+          "block py-2 pr-4 pl-3 text-white rounded text-[48px] font-bold",
           " md:bg-transparent md:p-0 md:text-sm  md:font-medium dark:text-white"
         )}
       >
@@ -61,7 +61,7 @@ export const MenuItem = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         className={clsx(
-          "block py-2 pr-4 pl-3 text-white rounded text-[64px] font-bold",
+          "block py-2 pr-4 pl-3 text-white rounded text-[48px] font-bold",
           " md:bg-transparent md:p-0 md:text-sm  md:font-medium dark:text-white"
         )}
       >

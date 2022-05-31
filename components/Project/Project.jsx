@@ -65,14 +65,14 @@ export const Project = ({ className, styles }) => {
         />
 
         <SkillList
-          title={`Customize UI / UX`}
+          title={`Customize UI/UX`}
           context={`With our built in editing tools and filters you’ll make any video your own. Add your own identity with a few clicks.`}
           image={`/images/screen.png`}
           ido={"cCustomize UI / UX"}
         />
 
         <SkillList
-          title={`Customize UI / UX`}
+          title={`Customize UI/UX`}
           context={`With our built in editing tools and filters you’ll make any video your own. Add your own identity with a few clicks.`}
           image={`/images/screen.png`}
           ido={"cCustomize UI / UX"}
