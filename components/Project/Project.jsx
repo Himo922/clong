@@ -57,23 +57,23 @@ export const Project = ({ className, styles }) => {
         </div>
 
         <SkillList
-          title={`Record product demos`}
-          context={` Recording is always just a click away. Snap something quick or use a
-        million takes. Aperture is ready for antything.`}
+          title={`Develop Web Application`}
+          context={` Design web application for multi purpose.`}
           image={`/images/screen.png`}
+          link={`/prioject/filter:webapp`}
           ido={"Record product demos"}
         />
 
         <SkillList
-          title={`Customize UI/UX`}
-          context={`With our built in editing tools and filters you’ll make any video your own. Add your own identity with a few clicks.`}
+          title={`MiniGame Develop `}
+          context={`Design Mini Game, create game image, create game machines. `}
           image={`/images/screen.png`}
           ido={"cCustomize UI / UX"}
         />
 
         <SkillList
-          title={`Customize UI/UX`}
-          context={`With our built in editing tools and filters you’ll make any video your own. Add your own identity with a few clicks.`}
+          title={`Create Art Creation `}
+          context={`Using p5js or javascript to cerate art pieces for NFT or visulaize the data.`}
           image={`/images/screen.png`}
           ido={"cCustomize UI / UX"}
         />
