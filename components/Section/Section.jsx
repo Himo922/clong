@@ -1,43 +1,38 @@
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
-
+// import { useTheme } from "next-themes";
+import clsx from "clsx";
 import { SectionHeader } from "./SectionHeader";
+import { useStateContext } from "../../context/StateContext";
 
-export const Section = ({ title, description, className, children, color }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
+export const Section = ({
+  title,
+  description,
+  children,
+  color,
+  navIndex,
+  themeProps,
+}) => {
+  const [ref, inView] = useInView({
+    threshold: 0,
+    rootMargin: " -60px",
+  });
+  // const { theme, setTheme } = useTheme();
+  const { currentSection, setCurrentSection } = useStateContext();
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
+      setCurrentSection(navIndex);
+      console.log("currentSection", currentSection);
     }
-  }, [controls, inView]);
-
+  });
   return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      variants={{
-        hidden: {
-          y: 30,
-          opacity: 0,
-        },
-        visible: {
-          y: 0,
-          opacity: 1,
-        },
-      }}
-      transition={{
-        delay: 0.4,
-        duration: 0.5,
-        damping: 10,
-        mass: 1,
-      }}
-    >
-      <SectionHeader title={title} className={className} color={color} />
+    <section ref={ref} id={title}>
+      <h3 className="hidden">{title}</h3>
+      {/* <SectionHeader title={title} description={description} /> */}
+
       {children}
-    </motion.div>
+    </section>
   );
 };

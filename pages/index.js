@@ -10,42 +10,33 @@ import {
   Fanfare,
   NavBar,
   Footer,
+  Works,
+  Playground,
+  Testimonials,
+  ParallaxTest,
+  SkillDisplay,
 } from "../components";
+import { HeroPendulum } from "../components/Hero/HeroPendulum";
 import { useWindowSize } from "../hooks/useWindowSize";
+import { Gallery } from "../components/Project/Gallery";
 import { motion, useTransform, useElementScroll } from "framer-motion";
+import { Parallax, Background } from "react-scroll-parallax";
 
 import { useInView } from "react-intersection-observer";
-import { Skills } from "../components/Skills/Skills";
+import { SkillList } from "../components/Skills/SkillList";
 
 export default function Home() {
-  const [fanfare, setFanfare] = useState(true);
-  const [main, setMain] = useState(false);
-
-  const [scrollY, setScrollY] = useState(0);
+  const { width, height } = useWindowSize();
+  const handleScroll = () => setOffSetY(window.pageYOffset);
 
   return (
     <>
-      <div
-        className="min-h-screen w-full flex flex-col flex-1 justify-center z-10 
-            justify-items-stretch  "
-      >
-        <Hero className="mb-8 p-2 min-h-screen -z-10" />
-        <About
-          className="w-screen"
-          //styles={{ transform: `translateY(-${scrollY}px)` }}
-        />
-        <Project
-          className="mx-4 my-8 p-2 px-10 md:px-36"
-          // styles={{ transform: `translateY(-${scrollY}px)` }}
-        />
-        <Skills
-          className="mx-4 my-8 p-2 px-10 md:px-36"
-          //styles={{ transform: `translateY(-${scrollY}px)` }}
-        />
-        <Contact
-          className="mx-4 my-8 p-2 px-10 md:px-36 "
-          //styles={{ transform: `translateY(-${scrollY}px)` }}
-        />
+      <div className="min-h-screen w-full bg-white-900 justify-items-stretch  ">
+        <Hero className="w-full" width={width} height={height} />
+        <About />
+        <Project />
+        <SkillDisplay />
+        <Contact className="mx-4 my-8 p-2 px-10 md:px-36 " />
       </div>
     </>
   );

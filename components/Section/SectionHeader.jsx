@@ -2,20 +2,20 @@ import { Container } from "../Container";
 import React from "react";
 import clsx from "clsx";
 
-export const SectionHeader = ({ title, className, color }) => {
+export const SectionHeader = ({ title, description, color }) => {
   return (
-    <Container className={clsx("flex flex-col", className)}>
-      <div className={clsx("flex flex-row", className)}>
-        <h2
-          className={clsx(
-            "mb-4 mr-4 text-2xl font-bold md:text-sectionHeader",
-            color
-          )}
-        >
-          {title}
-        </h2>
-        <div className="mb-8 w-[25%] border-b-2 border-orange-500"></div>
+    <div className={clsx("flex flex-col container mx-auto mt-16")}>
+      <h2
+        className={clsx(
+          "mb-4 mr-4 text-3xl font-bold md:text-sectionHeader",
+          color
+        )}
+      >
+        {title}
+      </h2>
+      <div className="mb-8 text-md">
+        <p className="text-md text-gray-600">{description}</p>
       </div>
-    </Container>
+    </div>
   );
 };

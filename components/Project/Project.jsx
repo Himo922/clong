@@ -1,104 +1,93 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { animations, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Section } from "../Section";
 import { Container } from "../Container";
 import { Project_Item } from "./Project_Item";
+import { data } from "../../src/data";
+import { ProjectGallery } from "./ProjectGallery";
 import clsx from "clsx";
+import gsap from "gsap";
+import { SelectedProject } from "../SelectedProject";
+import { useParallax } from "react-scroll-parallax";
+import { SkillList } from "../Skills/SkillList";
+import { SkillDisplay } from "../SkillDisplay/SkillDisplay";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 export const Project = ({ className, styles }) => {
+  const [percentages, setPercentages] = useState(0);
   const { ref, inView } = useInView();
-  const animation = useAnimation();
-  const controls = useAnimation();
+  const { width, height } = useWindowSize();
 
-  useEffect(() => {
-    console.log("use Effect,inView =", inView);
-    if (inView) {
-      animation.start({
-        x: 0,
-        opacity: 1,
-        transition: {
-          delay: 0.1,
-          duration: 1,
-          ease: "easeOut",
-          stiffness: 400,
-          damping: 40,
-        },
-      });
-    }
-  }, [animation, inView]);
+  const { ref: parllref } = useParallax({
+    speed: [200],
+    translateY: [0, 500],
+    scale: [0.9, 1],
+    onProgressChange: (percentage) => {
+      setPercentages(percentage);
+
+      // console.log("percentage", percentage);
+    },
+  });
 
   return (
-    <div
-      className={clsx("bg-blue-900 z-10 pb-20 p-8 md:min-[800px]")}
-      style={styles}
-      id="project"
-      ref={ref}
-    >
-      <Section className="mt-15 md:mt-20" title="Project">
-        <Container className="">
-          <h3 className="md:mb-40">
-            Here are the choosen project,wanna know more simply click on the
-            project and view it on github.
-          </h3>
+    <>
+      {/* <ProjectCutOff2 /> */}
+      <Section title="proejct" navIndex="project">
+        <div ref={ref} id="project" className="mt-5 md:mt-20 py-5">
+          <SelectedProject />
+        </div>
+        <div className="w-full h-[500px] relative overflow-hidden">
+          <div className="relative" ref={parllref}></div>
 
-          <div className="flex flex-wrap">
-            <div className="flex  flex-col p-5 md:p-0 md:flex-row items-start justify-evenly ">
-              {ProjectList.map((project, index) => (
-                <Project_Item
-                  {...project}
-                  key={clsx(project.title, index)}
-                  custom={index}
-                  controls={controls}
-                />
-              ))}
-
-              <div className="hidden md:block md:ml-10 self-center">
-                <a
-                  href="https://github.com/clonglam/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <h3> view More</h3>
-                </a>
-              </div>
-            </div>
-          </div>
-        </Container>
+          <div
+            style={{
+              position: "absolute",
+              background: `rgba(0, 0, 0, ${percentages * 5})`,
+              left: "50%",
+              top: "60%",
+              borderRadius: "50%",
+              transform: "translate(-50%,0%)",
+              easing: "easeOut",
+              width: percentages * width * 2,
+              height: percentages * width * 2,
+            }}
+          ></div>
+        </div>
       </Section>
-    </div>
+    </>
   );
 };
 
-const ProjectList = [
-  {
-    title: "STEM-League",
-    subtitle: "Software development",
-    year: "2021",
-    description:
-      "STEM League, which is a learning tool kit for steam learning. I created the software parts of the project including low latency control via the web dashboard and software control on Rpi. It is currently used in a secondary school for learning STEM. ",
-    technologies: ["ReactJs", "RPi", "Flask"],
-    githubLink: "https://github.com/clonglam/Stem-League",
-    imageLink: `/images/STEM Leage_phone.png`,
-  },
-  {
-    title: "E-commerce ",
-    subtitle: "Frontend & headless CMS",
-    year: "2022",
-    description:
-      "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
-    technologies: ["Nextjs", "headlessCMS", "apis"],
-    githubLink: "https://github.com/clonglam/staples-style-ecommerce",
-    imageLink: `/images/ecommerce-staples.png`,
-  },
-  {
-    title: "Trip Advisor",
-    subtitle: "Frontend & Backend Development",
-    year: "2022",
-    description:
-      "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
-    technologies: ["React", "datocms", "apis"],
-    githubLink: "https://github.com/clonglam/",
-    imageLink: `/images/Coming_Soon.png`,
-  },
-];
+// const ProjectList = [
+//   {
+//     title: "STEM-League",
+//     subtitle: "Software development",
+//     year: "2021",
+//     description:
+//       "STEM League, which is a learning tool kit for steam learning. I created the software parts of the project including low latency control via the web dashboard and software control on Rpi. It is currently used in a secondary school for learning STEM. ",
+//     technologies: ["ReactJs", "RPi", "Flask"],
+//     githubLink: "https://github.com/clonglam/Stem-League",
+//     imageLink: `/images/STEM Leage_phone.png`,
+//   },
+//   {
+//     title: "E-commerce ",
+//     subtitle: "Frontend & headless CMS",
+//     year: "2022",
+//     description:
+//       "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
+//     technologies: ["Nextjs", "headlessCMS", "apis"],
+//     githubLink: "https://github.com/clonglam/staples-style-ecommerce",
+//     imageLink: `/images/ecommerce-staples.png`,
+//   },
+//   {
+//     title: "Trip Advisor",
+//     subtitle: "Frontend & Backend Development",
+//     year: "2022",
+//     description:
+//       "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
+//     technologies: ["React", "datocms", "apis"],
+//     githubLink: "https://github.com/clonglam/",
+//     imageLink: `/images/Coming_Soon.png`,
+//   },
+// ];
