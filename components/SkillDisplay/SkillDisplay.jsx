@@ -49,7 +49,7 @@ export const SkillDisplay = () => {
         <SkillList
           title={`Create Art Creation `}
           context={`Using p5js or javascript to cerate art pieces for NFT or visulaize the data.`}
-          image={`/images/screen.png`}
+          video={`/images/particleflow.mp4`}
           ido={"cCustomize UI / UX"}
         />
         <div className="py-5 bg-black-900"></div>

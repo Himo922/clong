@@ -7,7 +7,7 @@ import { useWindowSize } from "../../hooks/useWindowSize";
 import clsx from "clsx";
 import _ from "lodash";
 
-export const SkillList = ({ title, context, image, ido }) => {
+export const SkillList = ({ title, context, image, ido, video }) => {
   const [percentages, setPercentages] = useState(0);
   const { width, height } = useWindowSize();
   const animateControl = useAnimation();
@@ -166,15 +166,21 @@ export const SkillList = ({ title, context, image, ido }) => {
           </div>
 
           <div className="max-w-[1200px] px-5">
-            <motion.img
-              variants={imageVariants}
-              initial="hidden"
-              animate={percentages > 0.5 ? "visible" : "exit"}
-              exit="exit"
-              className="w-full rounded-xl"
-              src={image}
-              alt="project1"
-            ></motion.img>
+            {image ? (
+              <motion.img
+                variants={imageVariants}
+                initial="hidden"
+                animate={percentages > 0.5 ? "visible" : "exit"}
+                exit="exit"
+                className="w-full rounded-xl"
+                src={image}
+                alt="project1"
+              ></motion.img>
+            ) : (
+              <div>
+                <video autoPlay muted loop src={video} type="video/mp4"></video>
+              </div>
+            )}
           </div>
         </div>
       </div>
