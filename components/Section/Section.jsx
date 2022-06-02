@@ -28,7 +28,7 @@ export const Section = ({
     }
   });
   return (
-    <section ref={ref}>
+    <section ref={ref} id={title}>
       <h3 className="hidden">{title}</h3>
       {/* <SectionHeader title={title} description={description} /> */}
 

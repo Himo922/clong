@@ -8,10 +8,10 @@ import { data } from "../../src/data";
 import { ProjectGallery } from "./ProjectGallery";
 import clsx from "clsx";
 import gsap from "gsap";
-import { ProjectCutOff2 } from "./projectCutOff2";
 import { SelectedProject } from "../SelectedProject";
 import { useParallax } from "react-scroll-parallax";
 import { SkillList } from "../Skills/SkillList";
+import { SkillDisplay } from "../SkillDisplay/SkillDisplay";
 import { useWindowSize } from "../../hooks/useWindowSize";
 
 export const Project = ({ className, styles }) => {
@@ -37,7 +37,6 @@ export const Project = ({ className, styles }) => {
         <div ref={ref} id="project" className="mt-5 md:mt-20 py-5">
           <SelectedProject />
         </div>
-
         <div className="w-full h-[500px] relative overflow-hidden">
           <div className="relative" ref={parllref}></div>
 
@@ -55,62 +54,40 @@ export const Project = ({ className, styles }) => {
             }}
           ></div>
         </div>
-
-        <SkillList
-          title={`Develop Web Application`}
-          context={` Design web application for multi purpose.`}
-          image={`/images/screen.png`}
-          link={`/prioject/filter:webapp`}
-          ido={"Record product demos"}
-        />
-
-        <SkillList
-          title={`MiniGame Develop `}
-          context={`Design Mini Game, create game image, create game machines. `}
-          image={`/images/screen.png`}
-          ido={"cCustomize UI / UX"}
-        />
-
-        <SkillList
-          title={`Create Art Creation `}
-          context={`Using p5js or javascript to cerate art pieces for NFT or visulaize the data.`}
-          image={`/images/screen.png`}
-          ido={"cCustomize UI / UX"}
-        />
       </Section>
     </>
   );
 };
 
-const ProjectList = [
-  {
-    title: "STEM-League",
-    subtitle: "Software development",
-    year: "2021",
-    description:
-      "STEM League, which is a learning tool kit for steam learning. I created the software parts of the project including low latency control via the web dashboard and software control on Rpi. It is currently used in a secondary school for learning STEM. ",
-    technologies: ["ReactJs", "RPi", "Flask"],
-    githubLink: "https://github.com/clonglam/Stem-League",
-    imageLink: `/images/STEM Leage_phone.png`,
-  },
-  {
-    title: "E-commerce ",
-    subtitle: "Frontend & headless CMS",
-    year: "2022",
-    description:
-      "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
-    technologies: ["Nextjs", "headlessCMS", "apis"],
-    githubLink: "https://github.com/clonglam/staples-style-ecommerce",
-    imageLink: `/images/ecommerce-staples.png`,
-  },
-  {
-    title: "Trip Advisor",
-    subtitle: "Frontend & Backend Development",
-    year: "2022",
-    description:
-      "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
-    technologies: ["React", "datocms", "apis"],
-    githubLink: "https://github.com/clonglam/",
-    imageLink: `/images/Coming_Soon.png`,
-  },
-];
+// const ProjectList = [
+//   {
+//     title: "STEM-League",
+//     subtitle: "Software development",
+//     year: "2021",
+//     description:
+//       "STEM League, which is a learning tool kit for steam learning. I created the software parts of the project including low latency control via the web dashboard and software control on Rpi. It is currently used in a secondary school for learning STEM. ",
+//     technologies: ["ReactJs", "RPi", "Flask"],
+//     githubLink: "https://github.com/clonglam/Stem-League",
+//     imageLink: `/images/STEM Leage_phone.png`,
+//   },
+//   {
+//     title: "E-commerce ",
+//     subtitle: "Frontend & headless CMS",
+//     year: "2022",
+//     description:
+//       "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
+//     technologies: ["Nextjs", "headlessCMS", "apis"],
+//     githubLink: "https://github.com/clonglam/staples-style-ecommerce",
+//     imageLink: `/images/ecommerce-staples.png`,
+//   },
+//   {
+//     title: "Trip Advisor",
+//     subtitle: "Frontend & Backend Development",
+//     year: "2022",
+//     description:
+//       "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
+//     technologies: ["React", "datocms", "apis"],
+//     githubLink: "https://github.com/clonglam/",
+//     imageLink: `/images/Coming_Soon.png`,
+//   },
+// ];

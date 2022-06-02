@@ -14,6 +14,7 @@ import {
   Playground,
   Testimonials,
   ParallaxTest,
+  SkillDisplay,
 } from "../components";
 import { HeroPendulum } from "../components/Hero/HeroPendulum";
 import { useWindowSize } from "../hooks/useWindowSize";
@@ -34,6 +35,7 @@ export default function Home() {
         <Hero className="w-full" width={width} height={height} />
         <About />
         <Project />
+        <SkillDisplay />
         <Contact className="mx-4 my-8 p-2 px-10 md:px-36 " />
       </div>
     </>

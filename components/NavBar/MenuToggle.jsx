@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 
 const Path = (props) => (
   <motion.path
+    className="stroke-black-900 dark:stroke-white-900 drop-shadow-sm"
     fill="transparent"
     strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
+    // stroke="hsl(0, 0%, 18%)"
     strokeLinecap="round"
     {...props}
   />

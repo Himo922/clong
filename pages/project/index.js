@@ -4,11 +4,14 @@ import { Card } from "../../components/Card";
 import clsx from "clsx";
 import { allProject } from "../../src/data";
 import { BsGrid1X2Fill, BsListStars } from "react-icons/bs";
-
+import { useTheme } from "next-themes";
 const ProjectList = () => {
+  const { theme, setTheme } = useTheme();
+
   const [grid, setGrid] = useState(true);
 
   const [list, setList] = useState(false);
+  setTheme("light");
 
   return (
     <div className="bg-white-900 mt-10 ">
@@ -23,23 +26,36 @@ const ProjectList = () => {
         </div>
 
         <div className="project-filter w-full flex justify-end py-5 px-10 gap-3 bg-white-900">
-          <button
-            onClick={() => {
-              setList(false);
-              setGrid(true);
-            }}
-          >
-            <BsGrid1X2Fill />
-          </button>
+          <div className="flex flex-row gap-5">
+            {/* {selector.map((selector, index) => (
+              <div
+                key={selector}
+                className="bg-white-500 rounded-full px-3 py-2"
+              >
+                <p>{selector}</p>
+              </div>
+            ))} */}
+          </div>
 
-          <button
-            onClick={() => {
-              setList(true);
-              setGrid(false);
-            }}
-          >
-            <BsListStars />
-          </button>
+          <div className="flex flex-row gap-5">
+            <button
+              onClick={() => {
+                setList(false);
+                setGrid(true);
+              }}
+            >
+              <BsGrid1X2Fill />
+            </button>
+
+            <button
+              onClick={() => {
+                setList(true);
+                setGrid(false);
+              }}
+            >
+              <BsListStars />
+            </button>
+          </div>
         </div>
         <hr />
         {grid && (
@@ -50,7 +66,7 @@ const ProjectList = () => {
                 technologies={project.technologies}
                 title={project.title}
                 // desc={project.description}
-                href={project.githubLink}
+                href={project.url}
                 imageSrc={project.imageLink}
                 index={index}
                 className={`col-span-8 md:col-span-3 ${
@@ -72,7 +88,7 @@ const ProjectList = () => {
               >
                 <div>{project.title}</div>
 
-                <div>{project.technologies}</div>
+                <div>{project.year}</div>
               </div>
 
               // <Card
@@ -93,3 +109,12 @@ const ProjectList = () => {
 };
 
 export default ProjectList;
+
+const selector = [
+  "All",
+  "Front-end",
+  "Headless CMS",
+  "Back-end",
+  "Ineractive Game ",
+  "software",
+];

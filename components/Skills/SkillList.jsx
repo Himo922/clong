@@ -128,7 +128,7 @@ export const SkillList = ({ title, context, image, ido }) => {
   });
   titleDivider(title);
   return (
-    <div className="bg-black-900 mt-[00px] w-full min-h-[40vh] md:h-[80vh] relative py-6">
+    <div className="bg-black-900 mt-[00px] w-full min-h-[40vh] md:h-[55vh] relative py-6">
       <div ref={parllref}>
         <h3 className="hidden">{ido} </h3>
         <div className="flex flex-col md:flex-row mx-auto px-10 max-w-[1200px] gap-5">
@@ -158,7 +158,7 @@ export const SkillList = ({ title, context, image, ido }) => {
                 initial="hidden"
                 animate={percentages > 0.4 ? "visible" : "exit"}
                 exit="exit"
-                className="text-gray-700 text-[18px] leading-[1.5rem] font-medium py-8 px-5 border-0 md:text-2xl text-white-700"
+                className="text-gray-700 max-w-[50ch] text-[18px] leading-[1.5rem] font-medium py-8 px-5 border-0 md:text-2xl text-white-700"
               >
                 {context}
               </motion.p>

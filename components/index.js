@@ -15,3 +15,4 @@ export * from "./Playground";
 export * from "./Testimonials";
 export * from "./ParallaxTest";
 export * from "./SelectedProject";
+export * from "./SkillDisplay";
