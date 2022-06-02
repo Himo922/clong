@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer className="flex flex-1 py-6 b-top-1 justify-center items-center">
       <a
-        href="https://github.com/clonglam/clong-web-master"
+        href="https://github.com/clonglam/"
         target="_blank"
         rel="noopener noreferrer"
         className="flex justify-center items-center grow"
