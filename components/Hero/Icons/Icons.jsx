@@ -26,7 +26,7 @@ export const Icons = ({ className }) => {
   return (
     <div className={className}>
       <div className="flex flex-row gap-5 align-center" ref={ref}>
-        {LinksList.map((icon, index) => (
+        {LinksLists.map((icon, index) => (
           <IconsItems
             {...icon}
             key={icon.name}
@@ -39,7 +39,7 @@ export const Icons = ({ className }) => {
   );
 };
 
-const LinksList = [
+const LinksLists = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/clong-lam-188a10233/",
