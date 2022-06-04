@@ -36,7 +36,7 @@ export default function Home() {
         <About />
         <Project />
         <SkillDisplay />
-        <Contact className="mx-4 my-8 p-2 px-10 md:px-36 " />
+        <Contact />
       </div>
     </>
   );

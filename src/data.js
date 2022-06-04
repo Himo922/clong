@@ -82,6 +82,18 @@ export const allProject = [
     imageLink: `/images/stemLeague/STEM_Leage_phone.png`,
   },
   {
+    title: "18-realty",
+    type: "Web Development",
+    subtitle: "Frontend & headless CMS",
+    year: "2021",
+    description:
+      "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
+    technologies: ["Web Development", "chatbot"],
+    // url: `http://18-realty.com`,
+    githubLink: "18-realty.com",
+    imageLink: `/images/18realty.png`,
+  },
+  {
     title: "e-commerce ",
     type: "Web Development",
     subtitle: "Frontend & headless CMS",
@@ -92,6 +104,18 @@ export const allProject = [
     url: `https://github.com/clonglam/staples-style-ecommerce`,
     githubLink: "https://github.com/clonglam/staples-style-ecommerce",
     imageLink: `/images/ecommerce-staples.png`,
+  },
+  {
+    title: "Ever Creation International",
+    type: "Web Development ",
+    subtitle: "Frontend & headless CMS",
+    year: "2020",
+    description:
+      "I will update the detail very soon, feel free to walk around my github. I will update this project very soon",
+    technologies: ["Web Develop", "Product Category"],
+    // url: `https://github.com/clonglam/staples-style-ecommerce`,
+    // githubLink: "https://github.com/clonglam/staples-style-ecommerce",
+    imageLink: `/images/everCreaction.png`,
   },
   {
     title: "Space Knowledge",

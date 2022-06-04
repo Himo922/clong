@@ -12,13 +12,13 @@ export const Card = ({
   return (
     <div
       className={clsx(
-        "max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700",
+        "max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700  hover:scale-105 duration-500",
         className
       )}
     >
       <a href={href}>
         <img
-          className="rounded-t-lg"
+          className="rounded-t-lg object-cover cardImage"
           src={imageSrc}
           alt={`image of + ${title}`}
         />

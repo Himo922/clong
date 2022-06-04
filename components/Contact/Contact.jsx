@@ -49,10 +49,10 @@ export const Contact = ({ className, styles }) => {
               Currently available for Hire, feel free to contact me via email.
             </h2>
             <div className="flex flex-col gap-5 justify-start" ref={ref}>
-              {LinksList.map((item, index) => (
+              {LinksListt.map((item, index) => (
                 <ContactItems
                   {...item}
-                  key={item.name}
+                  key={`${item.name}_contact`}
                   custom={index}
                   controls={animation}
                 />
@@ -65,7 +65,7 @@ export const Contact = ({ className, styles }) => {
   );
 };
 
-const LinksList = [
+const LinksListt = [
   {
     name: "Email",
     href: "mailto: clong516@gmail.com",
