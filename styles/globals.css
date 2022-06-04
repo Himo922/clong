@@ -387,3 +387,7 @@ a {
   height: 1px;
   background: black;
 }
+
+.cardImage {
+  aspect-ratio: 16 / 9;
+}
